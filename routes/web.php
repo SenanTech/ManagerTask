@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Admin;
+use App\Models\Personne;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    $createadim = new Admin;
+    $createadim->nom = 'MyAdmin';
+    $createadim->save();
+
+    $personne = Personne::create([
+        'roles' => 'simpleUser',
+        'photo' => 'maPhoto',
+        'groups' => 'group',
+    ]);
+    
+    
     return view('welcome');
     
 });
@@ -33,4 +45,3 @@ Route::get('/first', function () {
 Route::get('/user', function () {
     return view('user');
 });
-
