@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('statuts', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
+            $table->string('titre')->nullable();
+            $table->string('color')->nullable();  
             $table->timestamps();
         });
     }

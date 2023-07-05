@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('projets', function (Blueprint $table) {
             $table->id();
-            $table->string('titre');
-        $table->string('description');
-        $table->date('dateCreation');
-        $table->date('dateEcheance');
+            $table->string('titre')->nullable();
+        $table->string('description')->nullable();
+        $table->date('dateCreation')->nullable();
+        $table->date('dateEcheance')->nullable();
             $table->timestamps();
         });
     }

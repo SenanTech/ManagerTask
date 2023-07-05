@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('taches', function (Blueprint $table) {
             $table->id();
-            $table->string('titre');
-            $table->text('description');
-            $table->date('dateCreation');
-            $table->date('dateEcheance');
+            $table->string('titre')->nullable();;
+            $table->text('description')->nullable();;
+            $table->date('dateCreation')->nullable();;
+            $table->date('dateEcheance')->nullable();;
+            $table->integer('projet_id');
             $table->unsignedBigInteger('statut_id');
             $table->unsignedBigInteger('responsable_id');
             $table->timestamps();

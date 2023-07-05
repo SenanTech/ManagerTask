@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('personnes', function (Blueprint $table) {
             $table->id();
-            $table->string('photo');
-            $table->string('roles');
-            $table->string('groups');
+            $table->integer('users_id');
+            $table->string('profession')->nullable();
+            $table->date('date_naissance')->nullable();
+            $table->string('adresse')->nullable();
+            $table->integer('telephone')->nullable();
+            $table->date('date_inscrit')->nullable();
             $table->timestamps();
         });
     }
