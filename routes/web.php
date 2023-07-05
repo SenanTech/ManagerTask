@@ -32,4 +32,3 @@ Route::get('/first', function () {
 Route::get('/user', function () {
     return view('user');
 });
-
