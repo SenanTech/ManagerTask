@@ -1,4 +1,6 @@
-@extends('template')
+@extends('navbar')
+@extends('sidebar')
+@extends('body')
 @section('contenu')
     <div class="container-fluid px-4">
         <div class="card">
