@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('commentaires', function (Blueprint $table) {
             $table->id();
-            $table->text('contenu');        
-            $table->date('date');
-            $table->unsignedBigInteger('auteur_id');
-            $table->foreign('auteur_id')->references('id')->on('users');
+            $table->string('task_id')->nullable();
+            $table->text('contenu')->nullable();        
+            $table->date('date')->nullable();
+            $table->unsignedBigInteger('auteur_id')->nullable();
             $table->timestamps();
         });
     }

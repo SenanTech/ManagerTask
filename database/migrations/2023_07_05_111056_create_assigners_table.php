@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->integer('task_id');
             $table->integer('users_id');
+            $table->date('date_debut')->nullable();
+            $table->string('commentaire')->nullable();
             $table->timestamps();
         });
     }

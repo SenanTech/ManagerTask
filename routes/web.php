@@ -15,33 +15,21 @@ use App\Models\Personne;
 */
 
 Route::get('/', function () {
-    $createadim = new Admin;
-    $createadim->nom = 'MyAdmin';
-    $createadim->save();
-
-    $personne = Personne::create([
-        'roles' => 'simpleUser',
-        'photo' => 'maPhoto',
-        'groups' => 'group',
-    ]);
     
-    
-    return view('welcome');
+    return view('home');
     
 });
 
-Route::get('/dashboard', function () {
-        return view('template');
-});
+
 
 Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/first', function () {
+Route::get('/affiliate', function () {
     return view('fichier');
-});
+})->name('affiliate');
 
 Route::get('/user', function () {
     return view('user');
-});
+})->name('user');
