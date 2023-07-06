@@ -1,5 +1,6 @@
-@extends('template')
-
+@extends('navbar')
+@extends('sidebar')
+@extends('body')
 @section('contenu')
 <div class="container-xl px-4 mt-5">
                         <!-- Custom page header alternative example-->
