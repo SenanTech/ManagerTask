@@ -16,15 +16,13 @@ use App\Models\Personne;
 
 Route::get('/', function () {
     
-    return view('home');
+    return view('welcome');
     
 });
 
-
-
 Route::get('/home', function () {
     return view('home');
-});
+})->middleware('auth');
 
 Route::get('/affiliate', function () {
     return view('fichier');
@@ -33,3 +31,7 @@ Route::get('/affiliate', function () {
 Route::get('/user', function () {
     return view('user');
 })->name('user');
+
+Route::get('/hello', function(){
+    return view('auth.home');
+})->middleware('auth');

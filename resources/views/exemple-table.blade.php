@@ -1,4 +1,4 @@
-@extends('template')
+@extends('layout.template')
 @section('contenu')
     <div class="container-fluid px-4">
         <div class="card">

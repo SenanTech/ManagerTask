@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Users List - SB Admin Pro</title>
+        <title>ManagerTask</title>
+        
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
@@ -175,7 +176,7 @@
                             <img class="dropdown-user-img" src="assets/img/illustrations/profiles/profile-1.png" />
                             <div class="dropdown-user-details">
                                 <div class="dropdown-user-details-name">Valerie Luna</div>
-                                <div class="dropdown-user-details-email"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="93e5ffe6fdf2d3f2fcffbdf0fcfe">[email&#160;protected]</a></div>
+                                <div class="dropdown-user-details-email">{{Auth::user()->email}}</div>
                             </div>
                         </h6>
                         <div class="dropdown-divider"></div>
@@ -183,10 +184,15 @@
                             <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
                             Account
                         </a>
-                        <a class="dropdown-item" href="#!">
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
                             Logout
                         </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                       @csrf
+                    </form>
+
+
                     </div>
                 </li>
             </ul>
