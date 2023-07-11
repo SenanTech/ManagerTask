@@ -14,24 +14,15 @@ use App\Models\Personne;
 |
 */
 
-Route::get('/', function () {
-    
-    return view('welcome');
-    
-});
+Route::get('/', function () { return view('auth.login');})->middleware('auth');
 
 Route::get('/home', function () {
     return view('home');
-})->middleware('auth');
+})->name('home')->middleware(['auth', 'verified']);
 
 Route::get('/affiliate', function () {
     return view('fichier');
 })->name('affiliate');
 
-Route::get('/user', function () {
-    return view('user');
-})->name('user');
 
-Route::get('/hello', function(){
-    return view('auth.home');
-})->middleware('auth');
+
