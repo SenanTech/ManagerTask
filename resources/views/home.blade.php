@@ -1,6 +1,4 @@
-@extends('navbar')
-@extends('sidebar')
-@extends('body')
+@extends('layout.template')
 
 @section('contenu')
     <div class="container-xl px-4 mt-5">

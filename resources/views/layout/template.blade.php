@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Users List - SB Admin Pro</title>
+        <title>ManagerTask</title>
+        
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
@@ -23,7 +24,7 @@
             <!-- * * Tip * * You can use text or an image for your navbar brand.-->
             <!-- * * * * * * When using an image, we recommend the SVG format.-->
             <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
-            <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="index.html">SB Admin Pro</a>
+            <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="index.html">ManageTask</a>
             <!-- Navbar Search Input-->
             <!-- * * Note: * * Visible only on and above the lg breakpoint-->
             <form class="form-inline me-auto d-none d-lg-block me-3">
@@ -175,7 +176,7 @@
                             <img class="dropdown-user-img" src="assets/img/illustrations/profiles/profile-1.png" />
                             <div class="dropdown-user-details">
                                 <div class="dropdown-user-details-name">Valerie Luna</div>
-                                <div class="dropdown-user-details-email"><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="93e5ffe6fdf2d3f2fcffbdf0fcfe">[email&#160;protected]</a></div>
+                                <div class="dropdown-user-details-email">{{Auth::user()->email}}</div>
                             </div>
                         </h6>
                         <div class="dropdown-divider"></div>
@@ -183,14 +184,30 @@
                             <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
                             Account
                         </a>
-                        <a class="dropdown-item" href="#!">
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
                             Logout
                         </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                       @csrf
+                    </form>
+
+
                     </div>
                 </li>
             </ul>
         </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                @include('layout.menu')
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <!-- Main page content-->
+                   @yield('contenu')
+                </main>
+            </div>
+        </div>
         <script data-cfasync="false" src="{{asset('cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
