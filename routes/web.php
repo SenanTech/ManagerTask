@@ -20,9 +20,8 @@ Route::get('/home', function () {
     return view('home');
 })->name('home')->middleware(['auth', 'verified']);
 
-Route::get('/affiliate', function () {
-    return view('fichier');
-})->name('affiliate');
 
+
+Route::get('/user-list', function () { return view('user.list');})->name('user-list');
 
 
