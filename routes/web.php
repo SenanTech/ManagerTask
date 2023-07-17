@@ -1,5 +1,4 @@
 <?php
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Admin;
 use App\Models\Personne;
@@ -19,7 +18,7 @@ Route::get('/', function () { return view('auth.login');})->middleware('auth');
 
 Route::get('/home', function () { return view('home');})->name('home')->middleware(['auth','verified']);
 
-Route::get('/user-list', [UserController::class, 'showUsers'])->name('user-list');
+Route::get('/user-list', [UserController::class, 'showUsers'])->name('user-list')->middleware(['auth']);
 
 
 Route::get('/list', function () { return view('user.list');})->name('list');
@@ -27,8 +26,8 @@ Route::get('/list', function () { return view('user.list');})->name('list');
 
 
 
-Route::get('/userForm', function(){
+Route::get('/user-add', function(){
     return view('user.add');
-})->name('userForm');
+})->name('user-add')->middleware(['auth']);
 
 Route::post('/addUser', [UserController::class, 'addUsers'])->name('addUser');
