@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Personne;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -25,22 +28,18 @@ class UserController extends Controller
             
         ]);
 
-
-        $name = $request->input('name');
-        $password = $request->input('password');
-        $email = $request->input('email');
-        $prenom = $request->input('prenom');
-        
-
         $user = new User();
-        
-        $user->name = $name;
-        // $user->prenom = $prenom;
-        $user->email = $email;
-        $user->password = $password;
-        $user->role = 'utilisateur';
+        $user->name = $request->input('name');
+        $user->prenom = $request->input('prenom');
+        $user->email = $request->input('email');$request->input('email');
+        $user->password = Hash::make(  $request->input('password') );
+        $user->role = 'user';
         $user->save();
 
+        $personne = new Personne();
+        $personne->users_id = $user->id;
+        $personne->save();
+        
         session()->flash('success', 'Enregistrement réussi');
 
         return redirect()->route('userForm');
