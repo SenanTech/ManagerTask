@@ -46,8 +46,13 @@
                                                 <div class="col-md-6">
                                                     <!-- Form Group (last name)-->
                                                     <div class="mb-3">
-                                                        <label class="small mb-1" for="inputLastName">Last Name</label>
-                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter last name" />
+                                                    <label class="small mb-1" for="name">Last Name</label>
+                                                        <input class="form-control @error('prenom') is-invalid @enderror" id="prenom" type="text" name="prenom" value="{{ old('prenom') }}" required autocomplete="prenom" autofocus placeholder="Enter Last name" />
+                                                        @error('prenom')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror  
                                                     </div>
                                                 </div>
                                             </div>

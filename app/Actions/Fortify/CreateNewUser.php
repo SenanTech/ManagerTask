@@ -3,9 +3,10 @@
 namespace App\Actions\Fortify;
 
 use App\Models\User;
+use App\Models\Admin;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 
 class CreateNewUser implements CreatesNewUsers
@@ -31,10 +32,17 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
         ])->validate();
 
-        return User::create([
+        $user = User::create([
             'name' => $input['name'],
+            'prenom'=> $input['prenom'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
+            'role'=> 'admin',
         ]);
+
+        $admin = new Admin();
+        $admin->users_id= $user->id;
+        $admin->save();
+      return $user;
     }
 }
