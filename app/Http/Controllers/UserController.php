@@ -10,7 +10,7 @@ class UserController extends Controller
     {
         $utilisateurs = User::all();
     
-        return view('user.list', ['users' => $utilisateurs]);
+        return view('user.list', ['utilisateurs' => $utilisateurs]);
     }  
 }
 
