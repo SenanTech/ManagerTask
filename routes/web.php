@@ -3,6 +3,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Admin;
 use App\Models\Personne;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +27,8 @@ Route::get('/list', function () { return view('user.list');})->name('list');
 
 
 
+Route::get('/userForm', function(){
+    return view('user.add');
+})->name('userForm');
+
+Route::post('/addUser', [UserController::class, 'addUsers'])->name('addUser');
