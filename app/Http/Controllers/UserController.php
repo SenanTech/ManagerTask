@@ -7,10 +7,16 @@ use Illuminate\Support\Facades\View;
 
 class UserController extends Controller
 {
-
+  public function showUsers()
+    {
+        $utilisateurs = User::all();
+    
+        return view('user.list', ['utilisateurs' => $utilisateurs]);
+    }  
    
     public function addUsers(Request $request)
     {
+
         $validatedData = $request->validate([
             'prenom' => 'required|string',
             'name' => 'required|string',
@@ -18,6 +24,7 @@ class UserController extends Controller
             'email' => 'required|string',
             
         ]);
+
 
         $name = $request->input('name');
         $password = $request->input('password');

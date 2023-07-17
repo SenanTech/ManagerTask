@@ -1,5 +1,6 @@
 @extends('layout.template')
 @section('contenu')
+
     <div class="container-fluid px-4">
         <div class="card">
             <div class="card-body">
@@ -13,35 +14,38 @@
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>User</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Joined Date</th>
-                            <th>Actions</th>
-                        </tr>
-                    </tfoot>
+                    
                     <tbody>
+                    @foreach ($utilisateurs as $utilisateur)
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center">
                                     <div class="avatar me-2"><img class="avatar-img img-fluid"
                                             src="assets/img/illustrations/profiles/profile-1.png" /></div>
-                                    Tiger Nixon
+                                     {{ $utilisateur->name }}
                                 </div>
                             </td>
-                            <td><a href="cdn-cgi/l/email-protection.html" class="__cf_email__"
-                                    data-cfemail="fe8a97999b8cbe9b939f9792d09d9193">[email&#160;protected]</a></td>
-                            <td>Administrator</td>
                             <td>
-                                <span class="badge bg-green-soft text-green">Sales</span>
-                                <span class="badge bg-blue-soft text-blue">Developers</span>
-                                <span class="badge bg-red-soft text-red">Marketing</span>
-                                <span class="badge bg-purple-soft text-purple">Managers</span>
-                                <span class="badge bg-yellow-soft text-yellow">Customer</span>
+                                {{ $utilisateur->email }}
                             </td>
-                            <td>20 Jun 2021</td>
+
+                            <td>
+                            <span class="badge bg-green-soft text-green">Sales</span>
+                                <span class="badge bg-blue-soft text-blue">Developers</span>
+                            </td>
+
+                            
+                            <td class="{{ $utilisateur->email_verified ? 'text-success' : 'text-danger' }}">     
+                                     @if( $utilisateur->email_verified_at == null)
+                                     <span class="badge bg-red-soft text-red">Email non vérifié
+                                        </span>
+                                     @else 
+                                     <span class="badge bg-blue-soft text-blue">
+                                        Email vérifié
+                                        </span> 
+                                     @endif
+                            </td>
+                            
                             <td>
                                 <a class="btn btn-datatable btn-icon btn-transparent-dark me-2"
                                     href="user-management-edit-user.html"><i data-feather="edit"></i></a>
@@ -49,6 +53,7 @@
                                         data-feather="trash-2"></i></a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -56,12 +61,4 @@
     </div>
 @endsection
 
-<!-- Dans votre vue index.blade.php -->
-
-@foreach ($utilisateurs as $utilisateur)
-    <p>Nom: {{ $utilisateur->name }}</p>
-    <p>Mot de passe: {{ $utilisateur->password }}</p>
-    <p>Rôle: {{ $utilisateur->role }}</p>
-    <p>Date de création: {{ $utilisateur->created_at }}</p>
-@endforeach
 

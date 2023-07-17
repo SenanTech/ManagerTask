@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Admin;
 use App\Models\Personne;
@@ -17,13 +17,14 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', function () { return view('auth.login');})->middleware('auth');
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home')->middleware(['auth', 'verified']);
+Route::get('/home', function () { return view('home');})->name('home')->middleware(['auth','verified']);
+
+Route::get('/user-list', [UserController::class, 'showUsers'])->name('user-list');
 
 
+Route::get('/list', function () { return view('user.list');})->name('list');
 
-Route::get('/user-list', function () { return view('user.list');})->name('user-list');
+
 
 
 Route::get('/userForm', function(){
