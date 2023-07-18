@@ -4,23 +4,23 @@
         <div class="nav accordion" id="accordionSidenav">
             <!-- Sidenav Menu Heading (Account)-->
             <!-- * * Note: * * Visible only on and above the sm breakpoint-->
-            <div class="sidenav-menu-heading d-sm-none">Account</div>
+            <div class="sidenav-menu-heading d-sm-none">Mon compte</div>
             <!-- Sidenav Link (Alerts)-->
             <!-- * * Note: * * Visible only on and above the sm breakpoint-->
             <a class="nav-link d-sm-none" href="#!">
                 <div class="nav-link-icon"><i data-feather="bell"></i></div>
-                Alerts
-                <span class="badge bg-warning-soft text-warning ms-auto">4 New!</span>
+             Notifications
+                <span class="badge bg-warning-soft text-warning ms-auto">4 Nouveau!</span>
             </a>
             <!-- Sidenav Link (Messages)-->
             <!-- * * Note: * * Visible only on and above the sm breakpoint-->
             <a class="nav-link d-sm-none" href="#!">
                 <div class="nav-link-icon"><i data-feather="mail"></i></div>
                 Messages
-                <span class="badge bg-success-soft text-success ms-auto">2 New!</span>
+                <span class="badge bg-success-soft text-success ms-auto">2 Nouveau!</span>
             </a>
             <!-- Sidenav Menu Heading (Core)-->
-            <div class="sidenav-menu-heading">Menu Admin</div>
+            <div class="sidenav-menu-heading">Administrateur</div>
 
 
             <!-- Sidenav Accordion (Dashboard)-->
@@ -39,60 +39,25 @@
             </div>
 
 
-
-
             <!-- Nested Sidenav Accordion (Pages -> Account)-->
             <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAccount" aria-expanded="false" aria-controls="pagesCollapseAccount">
             <div class="nav-link-icon"><i data-feather="user"></i></div>
-                                        Account
+                                        Utilisateurs
                                         <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                     <div class="collapse" id="pagesCollapseAccount" data-bs-parent="#accordionSidenavPagesMenu">
                                         <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href="account-profile.html">Profile</a>
-                                            <a class="nav-link" href="account-billing.html">Billing</a>
-                                            <a class="nav-link" href="account-security.html">Security</a>
-                                            <a class="nav-link" href="account-notifications.html">Notifications</a>
-                                        </nav>
-                                    </div>
-
-
-  
-
-
-             <!-- Sidenav Accordion (Applications)-->
-             <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseApps" aria-expanded="false" aria-controls="collapseApps">
-                                <div class="nav-link-icon"><i data-feather="globe"></i></div>
-                                Utilisateurs
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapseApps" data-bs-parent="#accordionSidenav">
-                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavAppsMenu">
-                                    
-                                    <!-- Nested Sidenav Accordion (Apps -> User Management)-->
-                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#appsCollapseUserManagement" aria-expanded="false" aria-controls="appsCollapseUserManagement">
-                                    <div class="nav-link-icon"><i data-feather="globe"></i></div>
-                                        Utilisateurs
-                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="appsCollapseUserManagement" data-bs-parent="#accordionSidenavAppsMenu">
-                                        <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href="{{route('user-list')}}">Liste</a>
+                                        <a class="nav-link" href="{{route('user-list')}}">Liste </a>
+                                            <a class="nav-link" href="{{route('user-add')}}">Ajouter un utilisateur</a>
                                             
-                                            <a class="nav-link" href="{{route('user-add')}}">Ajouter</a>
-                                           
                                         </nav>
                                     </div>
-                                    
-                                </nav>
-                            </div>
-
 
             <!-- Sidenav Accordion (Utilities)-->
             <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
                 data-bs-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
                 <div class="nav-link-icon"><i data-feather="tool"></i></div>
-                Settings
+                Paramètres
                 <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
             </a>
             <div class="collapse" id="collapseUtilities" data-bs-parent="#accordionSidenav">
@@ -106,6 +71,22 @@
             </div>
         </div>
     </div>
+
+    <!-- gestion des tâches -->
+    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
+                data-bs-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
+                <div class="nav-link-icon"><i data-feather="tool"></i></div>
+                Tâches
+                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="collapseUtilities" data-bs-parent="#accordionSidenav">
+                <nav class="sidenav-menu-nested nav">
+                    <a class="nav-link" href="animations.html">Liste des tâches </a>
+                    <a class="nav-link" href="background.html">Créer une tâche</a>
+                    
+                </nav>
+            </div>
+
     <!-- Sidenav Footer-->
     <div class="sidenav-footer">
         <div class="sidenav-footer-content">
