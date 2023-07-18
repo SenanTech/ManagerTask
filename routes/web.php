@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Admin;
 use App\Models\Personne;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,9 @@ Route::get('/list', function () { return view('user.list');})->name('list');
 Route::get('/user-add', function(){  return view('user.add');})->name('user-add')->middleware(['auth','verified']);
 
 Route::post('/addUser', [UserController::class, 'addUsers'])->name('addUser');
+
+Route::get('/account', function(){ return view('profil.account'); })->name('account');
+Route::post('/accountUpdate', [UserController::class, 'update'])->name('accountUpdate');
+
+Route::get('/security', function(){ return view('profil.security'); })->name('security');
+Route::post('/passwordUpdate', [UserController::class, 'passwordUpdate'])->name('passwordUpdate');

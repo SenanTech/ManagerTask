@@ -46,4 +46,46 @@ class UserController extends Controller
         return redirect()->route('user-add');
 
     }
+
+    public function update(Request $request)
+    {
+        $user = auth()->user();
+
+        $validate = $request->validate([
+            'prenom' => 'required|string',
+            'name' => 'required|string',
+            'email' => 'required|string',
+
+        ]);
+        
+        $user->name = $request->input('name');
+        $user->prenom = $request->input('prenom');
+        $user->email = $request->input('email');
+        $user->save();
+
+        session()->flash('success', 'Modification réussi');
+
+        return redirect()->route('account');  
+    }
+
+    public function passwordUpdate(Request $request)
+    {
+        $user = auth()->user();
+
+        $validate = $request->validate([
+            'currentPassword' => 'required|string',
+            'password' => 'required|string',
+            
+        ]);
+    
+        if (Hash::check($request->input('currentPassword'), $user->password)) {
+            $user->password = $request->input('password');
+            $user->save();
+            session()->flash('success', 'Modification réussi');            
+        }else {
+            session()->flash('error', 'Veuillez bien mettre votre mot de passe actuel');
+        }
+        
+        return redirect()->route('security');  
+    }
 }
