@@ -71,14 +71,15 @@
                                     
                                     <!-- Nested Sidenav Accordion (Apps -> User Management)-->
                                     <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#appsCollapseUserManagement" aria-expanded="false" aria-controls="appsCollapseUserManagement">
-                                        User Management
+                                    <div class="nav-link-icon"><i data-feather="globe"></i></div>
+                                        Utilisateurs
                                         <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                     <div class="collapse" id="appsCollapseUserManagement" data-bs-parent="#accordionSidenavAppsMenu">
                                         <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href={{route('user-list')}}>Users List</a>
-                                            <a class="nav-link" href="user-management-edit-user.html">Edit User</a>
-                                            <a class="nav-link" href="user-management-add-user.html">Add User</a>
+                                            <a class="nav-link" href="{{route('user-list')}}">Liste</a>
+                                            
+                                            <a class="nav-link" href="{{route('user-add')}}">Ajouter</a>
                                            
                                         </nav>
                                     </div>
