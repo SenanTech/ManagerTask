@@ -2,7 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Admin;
 use App\Models\Personne;
-use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,11 +23,6 @@ Route::get('/user-list', [UserController::class, 'showUsers'])->name('user-list'
 
 Route::get('/list', function () { return view('user.list');})->name('list');
 
-
-
-
-Route::get('/user-add', function(){
-    return view('user.add');
-})->name('user-add')->middleware(['auth']);
+Route::get('/user-add', function(){  return view('user.add');})->name('user-add')->middleware(['auth','verified']);
 
 Route::post('/addUser', [UserController::class, 'addUsers'])->name('addUser');

@@ -55,6 +55,34 @@
             </div>
 
 
+             <!-- Sidenav Accordion (Applications)-->
+             <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseApps" aria-expanded="false" aria-controls="collapseApps">
+                                <div class="nav-link-icon"><i data-feather="globe"></i></div>
+                                Utilisateurs
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseApps" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavAppsMenu">
+                                    
+                                    <!-- Nested Sidenav Accordion (Apps -> User Management)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#appsCollapseUserManagement" aria-expanded="false" aria-controls="appsCollapseUserManagement">
+                                    <div class="nav-link-icon"><i data-feather="globe"></i></div>
+                                        Utilisateurs
+                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="appsCollapseUserManagement" data-bs-parent="#accordionSidenavAppsMenu">
+                                        <nav class="sidenav-menu-nested nav">
+                                            <a class="nav-link" href="{{route('user-list')}}">Liste</a>
+                                            
+                                            <a class="nav-link" href="{{route('user-add')}}">Ajouter</a>
+                                           
+                                        </nav>
+                                    </div>
+                                    
+                                </nav>
+                            </div>
+
+
 
             <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
                 data-bs-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
