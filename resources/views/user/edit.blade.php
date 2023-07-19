@@ -1,7 +1,7 @@
 @extends('layout.template')
 @section('contenu')
 @section('contenu')
-<div id="layoutSidenav_content">
+
     <main>
         <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
             <div class="container-xl px-4">
@@ -76,7 +76,7 @@
                                     <label class="small mb-1" for="confirmpassword">Email address</label>
                                     <input class="form-control" id="confirmpassword" type="password" placeholder="Confirm your password"  />
                                 </div>
-                                
+
                                 <!-- Form Group (Roles)-->
                                 <div class="mb-3">
                                     <label class="small mb-1">Role</label>
@@ -95,17 +95,6 @@
             </div>
         </div>
     </main>
-    <footer class="footer-admin mt-auto footer-light">
-        <div class="container-xl px-4">
-            <div class="row">
-                <div class="col-md-6 small">Copyright © Your Website 2021</div>
-                <div class="col-md-6 text-md-end small">
-                    <a href="#!">Privacy Policy</a>
-                    ·
-                    <a href="#!">Terms &amp; Conditions</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+
 </div>
 @endsection

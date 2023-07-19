@@ -7,11 +7,13 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th>User</th>
+                            <th>Utilisateur</th>
                             <th>Email</th>
-                            <th>Role</th>
-                            <th>Joined Date</th>
+                            <th>Rôle</th>
+                            <th>Date de création</th>
+                            @if(Auth::user()->role == 'admin')
                             <th>Actions</th>
+                            @endif
                         </tr>
                     </thead>
                     
@@ -30,8 +32,9 @@
                             </td>
 
                             <td>
-                            <span class="badge bg-green-soft text-green">Sales</span>
-                                <span class="badge bg-blue-soft text-blue">Developers</span>
+                            
+                                <span class="badge bg-blue-soft text-blue">{{ $utilisateur->role }}</span>
+                                <span></span>
                             </td>
 
                             
@@ -45,13 +48,16 @@
                                         </span> 
                                      @endif
                             </td>
-                            
-                            <td>
+
+                            @if(Auth::user()->role == 'admin')
+                                <td>
                                 <a class="btn btn-datatable btn-icon btn-transparent-dark me-2"
                                     href="user-management-edit-user.html"><i data-feather="edit"></i></a>
                                 <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i
                                         data-feather="trash-2"></i></a>
                             </td>
+                            @endif
+                            
                         </tr>
                         @endforeach
                     </tbody>
