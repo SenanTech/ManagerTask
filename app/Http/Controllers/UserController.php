@@ -12,9 +12,10 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
   public function showUsers()
+
     {
-        $utilisateurs = User::all();
-    
+        
+        $utilisateurs = User::where('role','user')->get();
         return view('user.list', ['utilisateurs' => $utilisateurs]);
     }  
    
@@ -22,16 +23,16 @@ class UserController extends Controller
     {
 
         $validatedData = $request->validate([
-            'prenom' => 'required|string',
-            'name' => 'required|string',
+            'last_name' => 'required|string',
+            'first_name' => 'required|string',
             'password' => 'required|string',
             'email' => 'required|string',
             
         ]);
 
         $user = new User();
-        $user->name = $request->input('name');
-        $user->prenom = $request->input('prenom');
+        $user->first_name = $request->input('first_name');
+        $user->last_name = $request->input('last_name');
         $user->email = $request->input('email');$request->input('email');
         $user->password = Hash::make(  $request->input('password') );
         $user->role = 'user';
@@ -60,16 +61,16 @@ class UserController extends Controller
         $user = User::find($id);
 
         $validate = $request->validate([
-            'prenom' => 'required|string',
-            'name' => 'required|string',
+            'last_name' => 'required|string',
+            'first_name' => 'required|string',
             'email' => 'required|string',
             'role' => 'required|string',
             'password' => 'required|string',
 
         ]);
         
-        $user->name = $request->input('name');
-        $user->prenom = $request->input('prenom');
+        $user->name = $request->input('first_name');
+        $user->prenom = $request->input('last_name');
         $user->email = $request->input('email');
         $user->role = $request->input('role');
         $user->password = $request->input('password');
