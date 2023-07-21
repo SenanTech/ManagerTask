@@ -2,6 +2,7 @@
 @section('contenu')
 @section('contenu')
 
+
         <main>
             <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
                 <div class="container-xl px-4">
@@ -19,6 +20,7 @@
                                     Retourner à la liste utilisateur
                                 </a>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -100,11 +102,19 @@
                                     <button class="btn btn-primary" type="submit">Enregistrer les modification</button>
                                 </form>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
+
         </main>
 
     </div>
+
+        </div>
+    </main>
+
+</div>
+
 @endsection

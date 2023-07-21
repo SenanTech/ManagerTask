@@ -42,3 +42,4 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::post('/user-edit/{id}',[UserController::class, 'updateUser'])->name('user-update');
 
 });
+

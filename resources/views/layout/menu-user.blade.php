@@ -4,12 +4,12 @@
         <div class="nav accordion" id="accordionSidenav">
             <!-- Sidenav Menu Heading (Account)-->
             <!-- * * Note: * * Visible only on and above the sm breakpoint-->
-            <div class="sidenav-menu-heading d-sm-none">Account</div>
+            <div class="sidenav-menu-heading d-sm-none">Mon compte</div>
             <!-- Sidenav Link (Alerts)-->
             <!-- * * Note: * * Visible only on and above the sm breakpoint-->
             <a class="nav-link d-sm-none" href="#!">
                 <div class="nav-link-icon"><i data-feather="bell"></i></div>
-                Alerts
+                Notifications
                 <span class="badge bg-warning-soft text-warning ms-auto">4 New!</span>
             </a>
             <!-- Sidenav Link (Messages)-->
@@ -32,8 +32,8 @@
             </a>
             <div class="collapse" id="collapseDashboards" data-bs-parent="#accordionSidenav">
                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                    
-                    
+
+
                     <a class="nav-link" href="{{ route('home') }}">Tableau</a>
                 </nav>
             </div>
@@ -56,7 +56,7 @@
             <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
                 data-bs-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
                 <div class="nav-link-icon"><i data-feather="tool"></i></div>
-                Settings
+                Paramètres
                 <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
             </a>
             <div class="collapse" id="collapseUtilities" data-bs-parent="#accordionSidenav">
@@ -65,7 +65,7 @@
                     <a class="nav-link" href="background.html">Background</a>
                     <a class="nav-link" href="borders.html">Borders</a>
                     <a class="nav-link" href="lift.html">Lift</a>
-            
+
                 </nav>
             </div>
         </div>
@@ -73,8 +73,8 @@
     <!-- Sidenav Footer-->
     <div class="sidenav-footer">
         <div class="sidenav-footer-content">
-            <div class="sidenav-footer-subtitle">Logged in as:</div>
+            <div class="sidenav-footer-subtitle">Connecté:</div>
             <div class="sidenav-footer-title">{{Auth::user()->name}}</div>
         </div>
-    </div> 
+    </div>
 </nav>
