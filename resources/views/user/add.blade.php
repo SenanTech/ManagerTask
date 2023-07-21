@@ -12,10 +12,10 @@
                 <div class="row align-items-center justify-content-between pt-3">
                     <div class="col-auto mb-3">
                         <h1 class="page-header-title">
-                            <div class="page-header-icon"><i data-feather="user-plus"></i></div Add User </h1>
+                            <div class="page-header-icon"><i data-feather="user-plus"></i></div> Add User </h1>
                     </div>
                     <div class="col-12 col-xl-auto mb-3">
-                        <a class="btn btn-sm btn-light text-primary" href={{ route('user-list') }}>
+                        <a class="btn btn-sm btn-light text-primary" href="{{ route('user-list') }}">
                             <i class="me-1" data-feather="arrow-left"></i>
                             Back to Users List
                         </a>
@@ -55,12 +55,12 @@
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputFirstName">First name</label>
                                     <input class="form-control" id="inputFirstName" type="text"
-                                        placeholder="Enter your first name" value="Valerie" name="name" />
+                                        placeholder="Enter your first name" value="Valerie" name="first_name" />
                                 </div>
                                 <!-- Form Group (last name)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="inputLastName">Last name</label>
-                                    <input class="form-control" name="prenom" id="inputLastName" type="text"
+                                    <input class="form-control" name="last_name" id="inputLastName" type="text"
                                         placeholder="Enter your last name" value="Luna" />
                                 </div>
                             </div>

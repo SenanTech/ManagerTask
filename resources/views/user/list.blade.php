@@ -24,7 +24,7 @@
                                 <div class="d-flex align-items-center">
                                     <div class="avatar me-2"><img class="avatar-img img-fluid"
                                             src="assets/img/illustrations/profiles/profile-1.png" /></div>
-                                     {{ $utilisateur->name }}
+                                     {{ $utilisateur->first_name }} {{ $utilisateur->last_name }}
                                 </div>
                             </td>
                             <td>
