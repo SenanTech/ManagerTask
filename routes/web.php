@@ -36,5 +36,10 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::get('/security', function(){ return view('profil.security'); })->name('security');
     Route::post('/passwordUpdate', [UserController::class, 'passwordUpdate'])->name('passwordUpdate');
 
+    Route::get('/user-delete/{id}',  [UserController::class, 'delete'])->name('user-delete');
+
+    Route::get('/user-edit/{id}', [UserController::class, 'editUser'])->name('user-edit');
+    Route::post('/user-edit/{id}',[UserController::class, 'updateUser'])->name('user-update');
+
 });
 

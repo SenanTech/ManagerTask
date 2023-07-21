@@ -1,6 +1,14 @@
 @extends('layout.template')
 @section('contenu')
-
+@if (session('founded'))
+    <div class="alert alert-succes">
+        {{session('success')}}
+    </div>
+@elseif (session('error'))
+    <div class="alert alert-danger">
+        {{session('error')}}
+    </div>
+@endif
     <div class="container-fluid px-4">
         <div class="card">
             <div class="card-body">
@@ -52,8 +60,9 @@
                             @if(Auth::user()->role == 'admin')
                                 <td>
                                 <a class="btn btn-datatable btn-icon btn-transparent-dark me-2"
-                                    href="user-management-edit-user.html"><i data-feather="edit"></i></a>
-                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i
+                                    href={{ route('user-edit', $utilisateur->id ) }}><i data-feather="edit"></i></a>
+                                <a class="btn btn-datatable btn-icon btn-transparent-dark" 
+                                href={{ route( 'user-delete', $utilisateur->id ) }} ><i
                                         data-feather="trash-2"></i></a>
                             </td>
                             @endif

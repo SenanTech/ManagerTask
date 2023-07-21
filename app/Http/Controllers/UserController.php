@@ -46,26 +46,38 @@ class UserController extends Controller
         return redirect()->route('user-add');
 
     }
-
-    public function update(Request $request)
+    
+    public function editUser($id)
     {
-        $user = auth()->user();
+        $user = User::find($id);
+
+        return view('user.edit', ['user'=>$user]);
+        
+    }
+    
+    public function updateUser(Request $request, $id)
+    {
+        $user = User::find($id);
 
         $validate = $request->validate([
             'prenom' => 'required|string',
             'name' => 'required|string',
             'email' => 'required|string',
+            'role' => 'required|string',
+            'password' => 'required|string',
 
         ]);
         
         $user->name = $request->input('name');
         $user->prenom = $request->input('prenom');
         $user->email = $request->input('email');
+        $user->role = $request->input('role');
+        $user->password = $request->input('password');
         $user->save();
 
         session()->flash('success', 'Modification réussi');
 
-        return redirect()->route('account');  
+        return redirect()->route('home'); 
     }
 
     public function passwordUpdate(Request $request)
@@ -88,4 +100,22 @@ class UserController extends Controller
         
         return redirect()->route('security');  
     }
+
+    public function delete($id)
+    {
+        
+        $user = User::find($id);
+
+        if(!$user){
+            session()->flash('error', 'Utilisateur introvable ...');
+        }
+        else{
+            $user->delete();
+            session()->flash('success', 'Suppression réussi ...');
+        }
+
+        return redirect()->route('user-list');
+    }
+
+    
 }
