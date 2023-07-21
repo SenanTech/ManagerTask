@@ -19,8 +19,6 @@ Route::get('/', function () { return redirect()->route('home'); }) ;
 
 Route::middleware(['auth','verified'])->group(function () {
 
-
-
     Route::get('/home', function () { return view('home');})->name('home');
 
     Route::get('/user-list', [UserController::class, 'showUsers'])->name('user-list');
@@ -49,9 +47,12 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::post('/projects-update', [ProjectController::class, 'update'])->name('projects-update'); 
 
     Route::get('/projects-destroy/{id}', [ProjectController::class, 'destroy'])->name('projects-destroy'); 
+  
+    Route::get('/user-delete/{id}',  [UserController::class, 'delete'])->name('user-delete');
 
-    });
+    Route::get('/user-edit/{id}', [UserController::class, 'editUser'])->name('user-edit');
+    Route::post('/user-edit/{id}',[UserController::class, 'updateUser'])->name('user-update');
 
-    
+});
 
 
