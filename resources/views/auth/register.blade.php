@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Login-ManagerTask</title>
+        <title>S'inscrire</title>
         <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
         <!-- <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}} "> -->
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
@@ -24,7 +24,7 @@
                             <div class="col-lg-7">
                                 <!-- Basic registration form-->
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header justify-content-center"><h3 class="fw-light my-4">Create Account</h3></div>
+                                    <div class="card-header justify-content-center"><h3 class="fw-light my-4">Créer un compte</h3></div>
                                     <div class="card-body">
                                         <!-- Registration form-->
                                         <form method="POST" action="{{ route('register') }}">
@@ -34,9 +34,9 @@
                                                 <div class="col-md-6">
                                                     <!-- Form Group (first name)-->
                                                     <div class="mb-3">
-                                                        <label class="small mb-1" for="name">First Name</label>
-                                                        <input class="form-control @error('name') is-invalid @enderror" id="name" type="text" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Enter first name" />
-                                                        @error('name')
+                                                        <label class="small mb-1" for="first_name">Nom</label>
+                                                        <input class="form-control @error('first_name') is-invalid @enderror" id="first_name" type="text" name="first_name" value="{{ old('first_name') }}" required autocomplete="first_name" autofocus placeholder="Entrez votre nom" />
+                                                        @error('first_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -46,9 +46,9 @@
                                                 <div class="col-md-6">
                                                     <!-- Form Group (last name)-->
                                                     <div class="mb-3">
-                                                    <label class="small mb-1" for="name">Last Name</label>
-                                                        <input class="form-control @error('prenom') is-invalid @enderror" id="prenom" type="text" name="prenom" value="{{ old('prenom') }}" required autocomplete="prenom" autofocus placeholder="Enter Last name" />
-                                                        @error('prenom')
+                                                    <label class="small mb-1" for="last_name">Prénom</label>
+                                                        <input class="form-control @error('last_name') is-invalid @enderror" id="last_name" type="text" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name" autofocus placeholder="Entrez votre prénom" />
+                                                        @error('last_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -58,7 +58,7 @@
                                             </div>
                                             <!-- Form Group (email address)            -->
                                             <div class="mb-3">
-                                                <label class="small mb-1" for="email">Email</label>
+                                                <label class="small mb-1" for="email">Adresse Email</label>
                                                 <input  id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required  autocomplete="email"aria-describedby="emailHelp" placeholder="Enter email address" />
                                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -71,8 +71,8 @@
                                                 <div class="col-md-6">
                                                     <!-- Form Group (password)-->
                                                     <div class="mb-3">
-                                                        <label class="small mb-1" for="password">Password</label>
-                                                        <input  id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Enter password" />
+                                                        <label class="small mb-1" for="password">Mot de passe</label>
+                                                        <input  id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Entrez votre mot de passe" />
                                                         @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -83,18 +83,18 @@
                                                 <div class="col-md-6">
                                                     <!-- Form Group (confirm password)-->
                                                     <div class="mb-3">
-                                                        <label class="small mb-1" for="password-confirm">Confirm Password</label>
+                                                        <label class="small mb-1" for="password-confirm">Confirmer Mot de passe</label>
                                                         <input class="form-control" name="password_confirmation" required autocomplete="new-password" id="password-confirm" type="password" placeholder="Confirm password" />
                                                    </div>
                                                 </div>
                                             </div>
                                             <!-- Form Group (create account submit)-->
                                             <button type="submit" class="btn btn-primary">
-                                            Create Account</button>
+                                            Créer un compte</button>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <div class="small"><a href="{{ route('login') }}">Have an account? Go to login</a></div>
+                                        <div class="small"><a href="{{ route('login') }}">Avez-vous un compte? Connectez-vous!</a></div>
                                     </div>
                                 </div>
                             </div>

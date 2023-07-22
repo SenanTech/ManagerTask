@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Login-ManagerTask</title>
+    <title>Se connecter</title>
     <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
     <!-- <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}} "> -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
@@ -29,7 +29,7 @@
                             <!-- Basic login form-->
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header justify-content-center">
-                                    <h3 class="fw-light my-4">Login</h3>
+                                    <h3 class="fw-light my-4">Se connecter</h3>
                                 </div>
                                 <div class="card-body">
                                     <!-- Login form-->
@@ -37,9 +37,9 @@
                                         @csrf
                                         <!-- Form Group (email address)-->
                                         <div class="mb-3">
-                                            <label class="small mb-1" for="email">Email</label>
+                                            <label class="small mb-1" for="email">Adresse Email</label>
                                             <input class="form-control @error('email') is-invalid @enderror" id="email"
-                                                type="email" placeholder="Enter email address" name="email"
+                                                type="email" placeholder="Enter votre adresse Email" name="email"
                                                 value="{{ old('email') }}" required autocomplete="email" autofocus />
                                             @error('email')
                                             <span class="invalid-feedback" role="alert">
@@ -49,10 +49,10 @@
                                         </div>
                                         <!-- Form Group (password)-->
                                         <div class="mb-3">
-                                            <label class="small mb-1" for="password">Password</label>
+                                            <label class="small mb-1" for="password">Mot de passe</label>
                                             <input class="form-control  @error('password') is-invalid @enderror"
                                                 id="password" type="password" name="password" required
-                                                autocomplete="current-password" placeholder="Enter password" />
+                                                autocomplete="current-password" placeholder="Entrez votre mot de passe" />
                                             @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -65,17 +65,17 @@
                                             <div class="form-check">
                                                 <input class="form-check-input" id="remember" type="checkbox"
                                                     name="remember" value="" {{ old('remember') ? 'checked' : '' }} />
-                                                <label class="form-check-label" for="remember">Remember password</label>
+                                                <label class="form-check-label" for="remember">Se souvenir</label>
                                             </div>
                                         </div>
 
                                         <!-- Form Group (login box)-->
                                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                             @if (Route::has('password.request'))
-                                            <a class="small" href="{{ route('password.request') }}">Forgot Password?</a>
+                                            <a class="small" href="{{ route('password.request') }}">Mot de passe oublié?</a>
                                             @endif
                                             <button type="submit" class="btn btn-primary">
-                                                Login
+                                                Se connecter
                                             </button>
                                         </div>
                                     </form>
@@ -83,7 +83,7 @@
 
                                 </div>
                                 <div class="card-footer text-center">
-                                    <div class="small"><a href="{{route('register')}}">Need an account? Sign up!</a>
+                                    <div class="small"><a href="{{route('register')}}">Besoin d'un compte? S'inscrire</a>
                                     </div>
                                 </div>
                             </div>
