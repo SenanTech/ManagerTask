@@ -4,6 +4,7 @@ use App\Models\Admin;
 use App\Models\Personne;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TacheController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,7 @@ use App\Http\Controllers\ProjectController;
 */
 Route::get('/', function () { return redirect()->route('home'); }) ;
 
-Route::middleware(['auth','verified'])->group(function () {
+//Route::middleware(['auth','verified'])->group(function () {
 
     Route::get('/home', function () { return view('home');})->name('home');
 
@@ -30,15 +31,23 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::post('/addUser', [UserController::class, 'addUsers'])->name('addUser');
     
     Route::get('/account', function(){ return view('profil.account'); })->name('account');
+
     Route::post('/accountUpdate', [UserController::class, 'update'])->name('accountUpdate');
 
     Route::get('/security', function(){ return view('profil.security'); })->name('security');
 
     Route::post('/passwordUpdate', [UserController::class, 'passwordUpdate'])->name('passwordUpdate');
+
+    Route::get('/user-edit/{id}', [UserController::class, 'editUser'])->name('user-edit');
+
+    Route::post('/user-edit/{id}',[UserController::class, 'updateUser'])->name('user-update');
+   
+    Route::get('/user-delete/{id}',  [UserController::class, 'delete'])->name('user-delete');
+
     
     Route::get('/projects-create', [ProjectController::class, 'create'])->name('projects-create'); 
 
-    Route::post('/creation', [ProjectController::class, 'store'])->name('projet-creation'); 
+    Route::post('/creation-projet', [ProjectController::class, 'store'])->name('projet-creation'); 
     
     Route::get('/projects-list', [ProjectController::class, 'liste'])->name('projects-list'); 
 
@@ -48,11 +57,18 @@ Route::middleware(['auth','verified'])->group(function () {
 
     Route::get('/projects-destroy/{id}', [ProjectController::class, 'destroy'])->name('projects-destroy'); 
   
-    Route::get('/user-delete/{id}',  [UserController::class, 'delete'])->name('user-delete');
+    Route::get('/tache-create/{id}', [TacheController::class, 'create'])->name('tache-create'); 
 
-    Route::get('/user-edit/{id}', [UserController::class, 'editUser'])->name('user-edit');
-    Route::post('/user-edit/{id}',[UserController::class, 'updateUser'])->name('user-update');
+    Route::post('/creation-tache', [TacheController::class, 'store'])->name('tache-creation'); 
+    
+    Route::get('/tache-list/{id}', [TacheController::class, 'liste'])->name('tache-list'); 
 
-});
+    Route::get('/tache-destroy/{id}', [TacheController::class, 'destroy'])->name('tache-destroy'); 
+  
+   
+
+    
+
+//});
 
 

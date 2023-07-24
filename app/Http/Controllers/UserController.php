@@ -23,16 +23,22 @@ class UserController extends Controller
     {
 
         $validatedData = $request->validate([
-            'last_name' => 'required|string',
-            'first_name' => 'required|string',
-            'password' => 'required|string',
+            'name' => 'required|string',
+            'prenom' => 'required|string',
+            'password' => 'required|string|confirmed|min:6',
             'email' => 'required|string',
-            
         ]);
-
+          
+        if ($validatedData->fails()) {
+            return redirect()->route('user-add')
+                             ->withErrors($validatedData)
+                             ->withInput();
+            
+            
+        }
         $user = new User();
-        $user->first_name = $request->input('first_name');
-        $user->last_name = $request->input('last_name');
+        $user->name= $request->input('name');
+        $user->prenom = $request->input('prenom');
         $user->email = $request->input('email');$request->input('email');
         $user->password = Hash::make(  $request->input('password') );
         $user->role = 'user';
@@ -61,22 +67,22 @@ class UserController extends Controller
         $user = User::find($id);
 
         $validate = $request->validate([
-            'last_name' => 'required|string',
-            'first_name' => 'required|string',
+            'name' => 'required|string',
+            'prenom' => 'required|string',
             'email' => 'required|string',
             'role' => 'required|string',
             'password' => 'required|string',
 
         ]);
         
-        $user->name = $request->input('first_name');
-        $user->prenom = $request->input('last_name');
+        $user->name = $request->input('name');
+        $user->prenom = $request->input('prenom');
         $user->email = $request->input('email');
         $user->role = $request->input('role');
         $user->password = $request->input('password');
         $user->save();
 
-        session()->flash('success', 'Modification réussi');
+        session()->flash('success', 'Modification réussie');
 
         return redirect()->route('home'); 
     }

@@ -25,9 +25,6 @@
             {{ session('success') }}
         </div>
     @endif
-
-   
-
     <div class="container-fluid px-4">
         <div class="card">
             <div class="card-body">
@@ -70,6 +67,8 @@
                                     href="{{route('projects-edit',$project->id)}}"><i data-feather="edit"></i></a>
                                     <a class="btn btn-datatable btn-icon btn-transparent-dark" href="{{route('projects-destroy',$project->id)}}"><i
                                         data-feather="trash-2"></i></a>
+                                        <a class="btn btn-datatable btn-icon btn-transparent-dark" href="{{route('tache-list' ,$project->id)}}"><i
+                                        data-feather="layers"></i></a>
                                        
                             </td>
                             

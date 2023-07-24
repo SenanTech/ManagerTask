@@ -63,7 +63,7 @@
         <div class="sidenav-footer">
             <div class="sidenav-footer-content">
                 <div class="sidenav-footer-subtitle">Connecté :</div>
-                <div class="sidenav-footer-title">{{ Auth::user()->name }}</div>
+                <div class="sidenav-footer-title">{{ Auth::user()->name }} {{ Auth::user()->prenom }}</div>
             </div>
         </div>
 </nav>

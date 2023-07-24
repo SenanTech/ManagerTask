@@ -19,9 +19,8 @@
                             <th>Email</th>
                             <th>Rôle</th>
                             <th>Date de création</th>
-                            @if(Auth::user()->role == 'admin')
                             <th>Actions</th>
-                            @endif
+                           
                         </tr>
                     </thead>
                     
@@ -32,7 +31,7 @@
                                 <div class="d-flex align-items-center">
                                     <div class="avatar me-2"><img class="avatar-img img-fluid"
                                             src="assets/img/illustrations/profiles/profile-1.png" /></div>
-                                     {{ $utilisateur->first_name }} {{ $utilisateur->last_name }}
+                                     {{ $utilisateur->name }} {{ $utilisateur->prenom }}
                                 </div>
                             </td>
                             <td>
@@ -57,7 +56,8 @@
                                      @endif
                             </td>
 
-                            @if(Auth::user()->role == 'admin')
+                           
+                            
                                 <td>
                                 <a class="btn btn-datatable btn-icon btn-transparent-dark me-2"
                                     href={{ route('user-edit', $utilisateur->id ) }}><i data-feather="edit"></i></a>
@@ -65,7 +65,7 @@
                                 href={{ route( 'user-delete', $utilisateur->id ) }} ><i
                                         data-feather="trash-2"></i></a>
                             </td>
-                            @endif
+                           
                             
                         </tr>
                         @endforeach
