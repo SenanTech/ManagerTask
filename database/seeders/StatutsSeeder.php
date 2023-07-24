@@ -15,8 +15,10 @@ class StatutsSeeder extends Seeder
     public function run()
 {
     $statuses = [
+         ['titre' => 'En attente', 'color' => '#FFB700'],
         ['titre' => 'En cours', 'color' => '#FFA500'],
-        ['name' => 'Terminé', 'color' => '#008000'],
+         ['titre' => 'En Pause', 'color' => 'yellow'],
+        ['titre' => 'Terminé', 'color' => '#008000'],
     ];
 
     Statut::insert($statuses);
