@@ -36,9 +36,6 @@ class ProjectController extends Controller
         $project->end_date = $request->input('end_date');
         $project->save();
 
-        
-
-
         // Rediriger vers une page appropriée avec un message de succès
         
         session()->flash('success', 'Projet créé avec succès.');

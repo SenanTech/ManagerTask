@@ -18,9 +18,10 @@ return new class extends Migration
             $table->date('dateCreation')->nullable();;
             $table->date('dateEcheance')->nullable();;
             $table->integer('projet_id');
-            $table->unsignedBigInteger('statut_id');
-            $table->unsignedBigInteger('responsable_id');
+            $table->unsignedBigInteger('statut_id')->default(0);
+            $table->unsignedBigInteger('responsable_id')->nullable();
             $table->timestamps();
+            
         });
     }
 

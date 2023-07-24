@@ -33,12 +33,12 @@
                 <div class="card mb-4">
                     <div class="card-header">Détails du projet</div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('projet-creation') }}">
+                        <form method="POST" action="{{ route('projet-creation') }}" >
                             @csrf
                             <!-- Form Row-->
                             <div class="row gx-3 mb-3">
                                 <!-- Form Group (first name)-->
-                                <div class="col-md-6">
+                                <div class="mb-3">
                                     <label class="small mb-1" for="name">Titre du projet</label>
                                     <input class="form-control" id="name" 
                                         placeholder="Entrer le titre du projet"  name="name">
@@ -47,7 +47,7 @@
                                
                             </div>
                              <!-- Form Group (last name)-->
-                             <div class="col-md-6">
+                             <div class="mb-3">
                                     <label class="small mb-1" for="description">Description</label>
                                     <textarea class="form-control" name="description" id="description" type="text"
                                         placeholder="Décrivez votre projet!"></textarea>
