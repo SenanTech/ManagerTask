@@ -64,6 +64,19 @@
                                 <label class="small mb-1" for="end_date">Date de fin</label>
                                 <input class="form-control" name='dateEcheance' id="end_date" type="date"/>
                             </div>
+                            
+                            
+                                <div class="mb-3">
+                                    <label for="" class="small mb-1 " >Assigner à</label>
+                                        <select name="user_id" id="user" class= "form-control">
+                                            @foreach($utilisateurs as $utilisateur)
+                                            <option value="{{$utilisateur->id}}">{{$utilisateur->name.' '.$utilisateur->prenom}} </option>
+                                            @endforeach
+                                        </select>
+                                        
+                                </div>
+
+                               
 
                             <!-- Submit button-->
                             <button class="btn btn-primary" type="submit">Créer</button>

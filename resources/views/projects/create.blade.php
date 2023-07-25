@@ -20,6 +20,19 @@
             </div>
         </div>
     </header>
+    
+   
+    <!-- <script src="{{ asset('js/app.js') }}" defer></script>
+    
+    <button onclick="showAlert()">Afficher l'alerte</button>
+
+    <script>
+        function showAlert() {
+            alert('Ceci est une alerte en JavaScript !');
+        }
+    </script>
+ -->
+
     <!-- Main page content-->
     <div class="container-xl px-4 mt-4">
         <div class="row">
