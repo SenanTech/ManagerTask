@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('projet_id');
             $table->unsignedBigInteger('statut_id')->default(0);
             $table->unsignedBigInteger('responsable_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
             
         });

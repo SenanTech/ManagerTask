@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Tache;
 use App\Models\Project;
+use App\Models\User;
 
 class TacheController extends Controller
 {
@@ -20,8 +21,11 @@ class TacheController extends Controller
     public function create($id)
     {
         $project = Project::find($id);
-        return view('tache.create', compact('project'));
+        $utilisateurs = User::where('role','user')->get();
+        return view('tache.create',['project'=>$project, 'utilisateurs'=>$utilisateurs]);
     }
+
+
 
     public function store(Request $request)
     {
@@ -32,11 +36,13 @@ class TacheController extends Controller
             'description' => 'required',
             'dateCreation' => 'required|date',
             'dateEcheance' => 'required|date',
-            // Autres règles de validation si nécessaire
+            
+            'user_id'=>['required', 'numeric'],
         ]);
 
         $tache = new Tache();
         $tache->projet_id = $request->input('projet_id');
+        $tache->user_id = $request->input('user_id');
         $tache->titre = $request->input('titre');
         $tache->description = $request->input('description');
         $tache->dateCreation = $request->input('dateCreation');
@@ -46,7 +52,7 @@ class TacheController extends Controller
 
         session()->flash('success', 'Tâche créée avec succès ' );
 
-        return redirect()->route('tache-list');
+        return redirect()->route('tache-list',$tache->projet_id  );
         
     }
         
