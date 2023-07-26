@@ -25,17 +25,13 @@ class UserController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|string',
             'prenom' => 'required|string',
-            'password' => 'required|string|confirmed|min:6',
+            'password' => 'required|string|same:password_confirm',
             'email' => 'required|string',
         ]);
           
-        if ($validatedData->fails()) {
-            return redirect()->route('user-add')
-                             ->withErrors($validatedData)
-                             ->withInput();
+        
             
-            
-        }
+     
         $user = new User();
         $user->name= $request->input('name');
         $user->prenom = $request->input('prenom');
