@@ -21,7 +21,7 @@
             <!-- Sidenav Menu Heading (Core)-->
             <div class="sidenav-menu-heading">ADMINISTRATEUR</div>
 
-            <a class="nav-link" href="{{ route('home') }}"><div class="nav-link-icon"><i data-feather="activity"></i></div> Accueil</a>
+            <a class="nav-link" href="{{ route('home') }}"><div class="nav-link-icon"><i data-feather="airplay"></i></div> Accueil</a>
 
 
             <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
@@ -52,10 +52,11 @@
 
                 </nav>
             </div>
-
-
+            <a class="nav-link" href="{{ route('tache-show') }}"><div class="nav-link-icon"><i data-feather="activity"></i></div> Vos tâches</a>
+            
 
         </div>
+        
 
 
 

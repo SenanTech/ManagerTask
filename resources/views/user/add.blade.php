@@ -32,7 +32,7 @@
             @endforeach
         </ul>
     </div>
-@endif
+    @endif
 
     <!-- Main page content-->
     <div class="container-xl px-4 mt-4">
@@ -87,7 +87,7 @@
                                     placeholder="Votre mot de passe" />
 
                                 <label class="small mb-1" for="inputpasswordconfirm">Confirmer mot de passe</label>
-                                <input class="form-control" id="inputpasswordconfirm" type="password"
+                                <input class="form-control" name="password_confirm" id="inputpasswordconfirm" type="password"
                                     placeholder="Confirmer " require/>
                             </div>
 

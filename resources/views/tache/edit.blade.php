@@ -32,7 +32,7 @@
                 <div class="card mb-4">
                     <div class="card-header">Informations</div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('tache-creation') }}">
+                        <form method="POST" action="{{ route('tache-update',$tache->id)}}">
                             @csrf
                             
                             <input type="hidden" name="projet_id" value="{{$project->id}}">
@@ -40,30 +40,31 @@
                             <div class="row gx-3 mb-3">
                                 <!-- Form Group (first name)-->
                             
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="name">Titre</label>
-                                    <input class="form-control" id="name" 
+                                <div class="mb-3">
+                                    <label class="mb-3" for="name">Titre</label>
+                                    <input class="form-control" id="name" value="{{ $tache->titre }}"
                                         name="titre">
                                 </div>
   
                                
                             </div>
                              <!-- Form Group (last name)-->
-                             <div class="col-md-6">
+                             <div class="mb-3">
                                     <label class="small mb-1" for="description">Description</label>
-                                    <textarea class="form-control" name="description" id="description" type="text"
-                                        placeholder="Décrivez votre projet!"></textarea>
+                                    <textarea class="form-control" name="description" id="description"  value =""type="text"
+                                        placeholder="Décrivez votre projet!">{{ $tache->description }}
+                                    </textarea>
                                 </div>
 
                             <!-- Form Group (email address)-->
                             <div class="mb-3">
                                 <label class="small mb-1" for="start_date">Date de début</label>
-                                <input class="form-control" name="dateCreation" id="start_date" type="date" />
+                                <input class="form-control" name="dateCreation" id="start_date" type="date" value="{{ $tache->dateCreation }}"/>
                             </div>
                             <!-- Form Group (Group Selection Checkboxes)-->
                             <div class="mb-3">
                                 <label class="small mb-1" for="end_date">Date de fin</label>
-                                <input class="form-control" name='dateEcheance' id="end_date" type="date"/>
+                                <input class="form-control" name='dateEcheance' id="end_date" type="date" value="{{ $tache->dateEcheance}}"/>
                             </div>
                             
                             
@@ -80,7 +81,7 @@
                                
 
                             <!-- Submit button-->
-                            <button class="btn btn-primary" type="submit">Créer</button>
+                            <button class="btn btn-primary" type="submit">Modifier</button>
                         </form>
                     </div>
                 </div>
