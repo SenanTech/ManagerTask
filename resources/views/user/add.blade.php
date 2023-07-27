@@ -88,7 +88,7 @@
 
                                 <label class="small mb-1" for="inputpasswordconfirm">Confirmer mot de passe</label>
                                 <input class="form-control" id="inputpasswordconfirm" type="password"
-                                    placeholder="Confirmer " require/>
+                                    placeholder="Confirmer "/>
                             </div>
 
                             <!-- Submit button-->
