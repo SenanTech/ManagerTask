@@ -19,7 +19,7 @@ use App\Http\Controllers\CommentaireController;
 */
 Route::get('/', function () { return redirect()->route('home'); }) ;
 
-//Route::middleware(['auth','verified'])->group(function () {
+Route::middleware(['auth','verified'])->group(function () {
 
     Route::get('/home', function () { return view('home');})->name('home');
 
@@ -58,11 +58,19 @@ Route::get('/', function () { return redirect()->route('home'); }) ;
 
     Route::get('/projects-destroy/{id}', [ProjectController::class, 'destroy'])->name('projects-destroy'); 
   
+
+
     Route::get('/tache-create/{id}', [TacheController::class, 'create'])->name('tache-create'); 
 
     Route::post('/creation-tache', [TacheController::class, 'store'])->name('tache-creation'); 
     
     Route::get('/tache-list/{id}', [TacheController::class, 'liste'])->name('tache-list');  
+
+    Route::get('/tache-show', [TacheController::class, 'show'])->name('tache-show'); 
+
+    Route::get('/tache-edit/{id}/{idProjet}', [TacheController::class, 'edit'])->name('tache-edit'); 
+
+    Route::post('/tache-update/{id}', [TacheController::class, 'update'])->name('tache-update'); 
 
     Route::get('/tache-destroy/{id}', [TacheController::class, 'destroy'])->name('tache-destroy'); 
 
@@ -71,8 +79,7 @@ Route::get('/', function () { return redirect()->route('home'); }) ;
     Route::get('/tache-action/{id}', [TacheController::class, 'tacheAction'])->name('tacheAction');
     Route::post('/post-comment/{id}', [CommentaireController::class, 'postComment'])->name('post-comment');
   
-   
 
-    
+});
 
-//});
+
