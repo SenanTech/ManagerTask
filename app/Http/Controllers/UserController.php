@@ -29,9 +29,6 @@ class UserController extends Controller
             'email' => 'required|string',
         ]);
           
-        
-            
-     
         $user = new User();
         $user->name= $request->input('name');
         $user->prenom = $request->input('prenom');

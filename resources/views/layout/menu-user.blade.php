@@ -1,4 +1,3 @@
-
 <nav class="sidenav shadow-right sidenav-light">
     <div class="sidenav-menu">
         <div class="nav accordion" id="accordionSidenav">
@@ -23,61 +22,36 @@
             <div class="sidenav-menu-heading">UTILISATEUR</div>
 
 
-            <a class="nav-link" href="{{ route('home') }}"><div class="nav-link-icon"><i data-feather="activity"></i></div> Accueil</a>
+            <a class="nav-link" href="{{ route('home') }}">
+                <div class="nav-link-icon"><i data-feather="activity"></i></div> Accueil
+            </a>
 
             <!-- Nested Sidenav Accordion (Pages -> Account)-->
-            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAccount" aria-expanded="false" aria-controls="pagesCollapseAccount">
-            <div class="nav-link-icon"><i data-feather="user"></i></div>
-                                        utilisateur
-                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAccount" data-bs-parent="#accordionSidenavPagesMenu">
-                                        <nav class="sidenav-menu-nested nav">
-                                            <a class="nav-link" href="{{route('user-list')}}">Liste des utilisateurs</a>
-                                        </nav>
-                                    </div>
-                 
-                                    <!-- gestion des tâches -->
+            
+
+            <!-- gestion des tâches -->
             <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
                 data-bs-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
-                <div class="nav-link-icon"><i data-feather="tool"></i></div>
+                <div class="nav-link-icon"><i data-feather="layers"></i></div>
                 Tâches
                 <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
             </a>
             <div class="collapse" id="collapseUtilities" data-bs-parent="#accordionSidenav">
                 <nav class="sidenav-menu-nested nav">
-                    <a class="nav-link" href="animations.html">Liste des tâches </a>
-                    
-
+                    <a class="nav-link" href="{{route("user-tache-list")}}">Liste des tâches </a>
                 </nav>
             </div>
 
         </div>
 
 
-            <!-- Sidenav Accordion (Utilities)-->
-            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
-                data-bs-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
-                <div class="nav-link-icon"><i data-feather="tool"></i></div>
-                Paramètres
-                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-            </a>
-            <div class="collapse" id="collapseUtilities" data-bs-parent="#accordionSidenav">
-                <nav class="sidenav-menu-nested nav">
-                    <a class="nav-link" href="animations.html">Animations</a>
-                    <a class="nav-link" href="background.html">Background</a>
-                    <a class="nav-link" href="borders.html">Borders</a>
-                    <a class="nav-link" href="lift.html">Lift</a>
 
-                </nav>
+
+        <!-- Sidenav Footer-->
+        <div class="sidenav-footer">
+            <div class="sidenav-footer-content">
+                <div class="sidenav-footer-subtitle">Connecté :</div>
+                <div class="sidenav-footer-title">{{ Auth::user()->name }} {{ Auth::user()->prenom }}</div>
             </div>
         </div>
-    </div>
-    <!-- Sidenav Footer-->
-    <div class="sidenav-footer">
-        <div class="sidenav-footer-content">
-            <div class="sidenav-footer-subtitle">Connecté:</div>
-            <div class="sidenav-footer-title">{{Auth::user()->name}}</div>
-        </div>
-    </div>
 </nav>

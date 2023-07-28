@@ -5,6 +5,7 @@ use App\Models\Personne;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TacheController;
+use App\Http\Controllers\CommentaireController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,7 +64,7 @@ Route::middleware(['auth','verified'])->group(function () {
 
     Route::post('/creation-tache', [TacheController::class, 'store'])->name('tache-creation'); 
     
-    Route::get('/tache-list/{id}', [TacheController::class, 'liste'])->name('tache-list'); 
+    Route::get('/tache-list/{id}', [TacheController::class, 'liste'])->name('tache-list');  
 
     Route::get('/tache-show', [TacheController::class, 'show'])->name('tache-show'); 
 
@@ -72,6 +73,11 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::post('/tache-update/{id}', [TacheController::class, 'update'])->name('tache-update'); 
 
     Route::get('/tache-destroy/{id}', [TacheController::class, 'destroy'])->name('tache-destroy'); 
+
+    Route::get('/user-tache-list', [TacheController::class, 'userTacheListe'])->name('user-tache-list');
+    
+    Route::get('/tache-action/{id}', [TacheController::class, 'tacheAction'])->name('tacheAction');
+    Route::post('/post-comment/{id}', [CommentaireController::class, 'postComment'])->name('post-comment');
   
 
 });
