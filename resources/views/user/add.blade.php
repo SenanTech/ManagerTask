@@ -33,7 +33,7 @@
         </ul>
     </div>
     @endif
-
+    
     <!-- Main page content-->
     <div class="container-xl px-4 mt-4">
         <div class="row">
