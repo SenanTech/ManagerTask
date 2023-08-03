@@ -60,9 +60,9 @@
                             
                                 <td>
                                 <a class="btn btn-datatable btn-icon btn-transparent-dark me-2"
-                                    href={{ route('user-edit', $utilisateur->id ) }}><i data-feather="edit"></i></a>
+                                    href="{{ route('user-edit', $utilisateur->id ) }}"><i data-feather="edit"></i></a>
                                 <a class="btn btn-datatable btn-icon btn-transparent-dark" 
-                                href={{ route( 'user-delete', $utilisateur->id ) }} ><i
+                                href="{{ route( 'user-delete', $utilisateur->id ) }}" ><i
                                         data-feather="trash-2"></i></a>
                             </td>
                            
