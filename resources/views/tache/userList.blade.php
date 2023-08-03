@@ -9,12 +9,6 @@
                             <div class="page-header-icon"><i data-feather="list"></i></div>Liste des tâches
                         </h1>
                     </div>
-                    <div class="col-12 col-xl-auto mb-3">
-                        <a class="btn btn-sm btn-light text-primary" href="{{ route('projects-list') }}">
-                            <i class="me-1" data-feather="arrow-left"></i>
-                            Voir le projet
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -36,9 +30,10 @@
                                     @foreach ($tachesProjet as $tache)
                                         <li class="list-group-item d-flex justify-content-between rounded mb-2  shadow-sm">
                                             {{ $tache->titre }}
+                                            <span class="badge bg-primary-soft text-black ">{{$tache->titre_statut}}</span>
                                             <a style="background:rgb(128, 181, 225)"
                                                 href="{{ route('tacheAction', $tache->tache_id) }}"
-                                                class="btn btn-sm">Action</a>
+                                                class="btn btn-sm">Action</a><br>
                                         </li>
                                     @endforeach
                                 </ul>

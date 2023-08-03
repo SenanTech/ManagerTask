@@ -28,26 +28,19 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('accountUpdate') }}">
                         @csrf
-                        <!-- Form Group (username)-->
-                        <div class="mb-3">
-                            <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users
-                                on the site)</label>
-                            <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username"
-                                value="username" />
-                        </div>
                         <!-- Form Row-->
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (first name)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputFirstName">First name</label>
                                 <input class="form-control" name="name" id="inputFirstName" type="text"
-                                    placeholder="Enter your first name" value="Valerie" />
+                                    placeholder="Enter your first name" value="{{Auth::user()->name}}" />
                             </div>
                             <!-- Form Group (last name)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputLastName">Last name</label>
                                 <input class="form-control" name="prenom" id="inputLastName" type="text"
-                                    placeholder="Enter your last name" value="Luna" />
+                                    placeholder="Enter your last name" value="{{Auth::user()->name}}" />
                             </div>
                         </div>
                         <!-- Form Row -->
@@ -60,12 +53,16 @@
                                     placeholder="Enter your location" value="San Francisco, CA" />
                             </div>
                         </div>
-                        <!-- Form Group (email address)-->
-                        <div class="mb-3">
+                       @if (Auth::user()->role == 'admin')
+
+                         <!-- Form Group (email address)-->
+                         <div class="mb-3">
                             <label class="small mb-1" for="inputEmailAddress">Email address</label>
                             <input class="form-control" name="email" id="inputEmailAddress" type="email"
                                 placeholder="Enter your email address" value="name@example.com" />
                         </div>
+                           
+                       @endif
                         <!-- Form Row-->
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (phone number)-->
