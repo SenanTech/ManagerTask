@@ -14,11 +14,12 @@ class CommentaireController extends Controller
     public function postComment(Request $request, $id)
     {
         $request->validate([
-            'commentaire'=> 'required|string',
+            'commentaire'=> 'string',
             'statut' => 'required',
         ]);
         $tache = Tache::find($id);
         $tache->statut_id = $request->input('statut');
+        $tache->save();
         
         $commentaire = new Commentaire();
         $commentaire->contenu = $request->input('commentaire');

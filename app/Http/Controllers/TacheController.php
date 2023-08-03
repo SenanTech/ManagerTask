@@ -131,7 +131,7 @@ public function destroy($id)
         $taches = Tache::join('projects', 'taches.projet_id', 'projects.id')
         ->join('statuts', 'taches.statut_id', 'statuts.id')
         ->where('taches.user_id', Auth::user()->id)
-        ->select(['taches.*', 'projects.*', 'projects.id as projects_id', 'taches.id as tache_id'])
+        ->select(['taches.*', 'projects.*', 'projects.id as projects_id', 'taches.id as tache_id', 'statuts.titre as titre_statut'])
         ->get();
 
         // Regrouper les tâches par projet en utilisant la clé 'projects_id'

@@ -42,7 +42,7 @@
             <div class="card-body">
             <div class="d-flex justify-content-end">
             <div class="dropdown">
-  <button class="dropdown-toggle me-20" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button class="dropdown-toggle me-20 btn" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     ...
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

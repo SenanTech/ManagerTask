@@ -50,8 +50,8 @@
                              <!-- Form Group (last name)-->
                              <div class="col-md-6">
                                     <label class="small mb-1" for="description">Description</label>
-                                    <textarea class="form-control" value="{{ $project->description }} " required 
-                                    name="description" id="description"></textarea>
+                                    <textarea class="form-control"  required 
+                                    name="description" id="description">{{ $project->description }} </textarea>
                                 </div>
 
                             <!-- Form Group (email address)-->
