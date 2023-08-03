@@ -116,6 +116,29 @@ class UserController extends Controller
 
         return redirect()->route('user-list');
     }
+    public function addimage(Request $request)
+    {
+        $user = User::find(Auth::user()->id);
+
+        if($request->file('image')){
+            /*$file= $request->file('image');
+
+            $filename= date('YmdHi').$file->getClientOriginalName();
+
+            $file->move(public_path('upload'), $filename);
+
+            $user->photos= 'public/upload/'.$filename; 
+
+            */
+            
+            $chemin =  $request->file('image')->store('upload', 'public');
+            $user->photos= $chemin;
+            $user->save();  
+
+        }
+       
+        return redirect()->back();
+    }
 
     
 }

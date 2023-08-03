@@ -35,6 +35,8 @@ Route::middleware(['auth','verified'])->group(function () {
 
     Route::post('/accountUpdate', [UserController::class, 'update'])->name('accountUpdate');
 
+    
+
     Route::get('/security', function(){ return view('profil.security'); })->name('security');
 
     Route::post('/passwordUpdate', [UserController::class, 'passwordUpdate'])->name('passwordUpdate');
@@ -44,7 +46,8 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::post('/user-edit/{id}',[UserController::class, 'updateUser'])->name('user-update');
    
     Route::get('/user-delete/{id}',  [UserController::class, 'delete'])->name('user-delete');
-
+    
+    Route::post('/addimage' , [UserController::class, 'addimage'])->name('addimage'); 
     
     Route::get('/projects-create', [ProjectController::class, 'create'])->name('projects-create'); 
 
