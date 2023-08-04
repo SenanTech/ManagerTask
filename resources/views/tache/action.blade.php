@@ -51,6 +51,35 @@
             height: 30px;
 
         }
+
+        /* Styles pour les commentaires */
+        .comment-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .avatar {
+            margin-right: 10px;
+        }
+
+        .avatar-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .comment-content {
+            flex: 1;
+            border-radius: 5px;
+            padding: 8px;
+            background-color: whitesmoke;
+        }
+
+        /* Style pour les diviseurs entre les commentaires */
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+        }
     </style>
     <div class="centered">
         <form action="{{ route('post-comment', $tache->id) }}" method="post" class="formulaire">
@@ -68,9 +97,6 @@
                         <div class="form-outline w-100">
                             {{-- <span style="margin-left: 40px">{{ Auth::user()->name }} {{ Auth::user()->prenom }}</span> --}}
                             <div style="display: flex; align-items:flex-start">
-                                <div class="avatar">
-                                    <img class="avatar-img img-fluid  avatar-lg" style="margin: 10px" src="{{ asset('assets/img/illustrations/profiles/profile-1.png') }}">
-                                </div>
                                 <textarea class="form-control" name="commentaire" id="textAreaExample" rows="3" style="margin:6px"></textarea>
                             </div>
                         </div>
@@ -78,6 +104,21 @@
                             <button type="submit" class="btn btn-primary btn-sm">Enregistrer</button>
                             <button type="reset" class="btn btn-outline-primary btn-sm">Effacer</button>
                         </div>
+                    </div>
+                    <div style="margin-top: 10px; max-height: 300px; overflow-y: auto;">
+                        @foreach ($commentaires as $comment)
+                            <div class="comment-item">
+                                <div class="avatar">
+                                    <img class="avatar-img img-fluid  avatar-lg" style="margin: 10px"
+                                        src="{{ asset('assets/img/illustrations/profiles/profile-1.png') }}">
+                                </div>
+                                <div class="comment-content">
+                                    {{-- <h3>{{$comment->name}} {{$comment->prenom}}</h3> --}}
+                                    <p>{{ $comment->contenu }}</p>
+                                </div>
+                            </div>
+                            <hr style="margin: 10px 0;">
+                        @endforeach
                     </div>
                 </div>
             </div>

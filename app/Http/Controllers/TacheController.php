@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Tache;
 use App\Models\Project;
 use App\Models\User;
+use App\Models\Commentaire;
 
 class TacheController extends Controller
 {
@@ -142,8 +143,10 @@ public function destroy($id)
     }
         
     public function tacheAction($id)
-    {
+    {   
+        
+        $comment = Commentaire::where('commentaires.task_id', $id)->get();       
         $tache = Tache::find($id);
-        return view("tache.action", ['tache'=>$tache]);
+        return view("tache.action", ['tache'=>$tache, 'commentaires'=>$comment]);
     }
 }
