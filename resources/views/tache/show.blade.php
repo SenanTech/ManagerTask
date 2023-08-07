@@ -34,6 +34,26 @@
                <h5 class="card-title"> {{ $tache->titre }}</h5>
                 <p class="card-text">{{ $tache->description }}</p>
                 <span class="badge bg-blue-soft text-blue "> {{$tache->titre_statut}}</span > <span class= "text-danger ms-5 "> {{$tache->name}} {{$tache->prenom}}</span>
+                <span class="d-inline-block nav-item dropdown no-caret  me-3 ms-5 dropdown-notifications">
+                    <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownMessages" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="message-square"></i></a>
+                    <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownMessages">
+                        <h6 class="dropdown-header dropdown-notifications-header">
+                            <i class="me-2" data-feather="mail"></i>
+                            Commentaire
+                        </h6>
+                        @foreach ($commentaires as $commentaire)
+                            @if ($commentaire->task_id == $tache->tache_id)
+                                <a class="dropdown-item dropdown-notifications-item" href="#!">
+                                    <img class="dropdown-notifications-item-img" src="{{asset("assets/img/illustrations/profiles/profile-2.png")}}" />
+                                    <div class="dropdown-notifications-item-content">
+                                        <div class="dropdown-notifications-item-content-text">{{$commentaire->contenu}}</div>
+                                        <div class="dropdown-notifications-item-content-details"> {{$tache->name}} {{$tache->prenom}} · 58m</div>
+                                    </div>
+                                </a>
+                            @endif    
+                        @endforeach
+                    </div>
+                </span>
             </div>
         </div>
     </div>

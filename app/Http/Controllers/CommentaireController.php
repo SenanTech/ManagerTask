@@ -15,11 +15,7 @@ class CommentaireController extends Controller
     {
         $request->validate([
             'commentaire'=> 'string',
-            'statut' => 'required',
         ]);
-        $tache = Tache::find($id);
-        $tache->statut_id = $request->input('statut');
-        $tache->save();
         
         $commentaire = new Commentaire();
         $commentaire->contenu = $request->input('commentaire');

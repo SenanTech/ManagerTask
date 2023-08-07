@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Tache;
 use App\Models\Project;
 use App\Models\User;
+use App\Models\Commentaire;
 
 class TacheController extends Controller
 {
@@ -28,11 +29,12 @@ class TacheController extends Controller
         $task = Tache::join('users', 'taches.user_id','users.id')
         ->join( 'statuts', 'taches.statut_id','statuts.id')
         ->join('projects', 'taches.projet_id', 'projects.id')
-        ->select(['taches.*', 'users.name', 'users.prenom', 'statuts.titre as titre_statut', 'projects.name as name_projet'])
+        ->select(['taches.*', 'taches.id as tache_id', 'users.name', 'users.prenom', 'statuts.titre as titre_statut', 'projects.name as name_projet'])
         ->get();
 
+        $commentaires = Commentaire::all();
 
-        return view('tache.show', ['task'=>$task]);
+        return view('tache.show', ['task'=>$task, 'commentaires'=>$commentaires]);
     }
 
     public function create($id)
@@ -123,8 +125,6 @@ public function destroy($id)
 }
 
         
-    
-
 
     public function userTacheListe()
     {
@@ -136,14 +136,25 @@ public function destroy($id)
 
         // Regrouper les tâches par projet en utilisant la clé 'projects_id'
         $tachesParProjet = $taches->groupBy('projects_id');
-
+        
         return view('tache.userList', ['tachesParProjet' => $tachesParProjet]);
 
     }
         
     public function tacheAction($id)
+    {   
+        
+        $comment = Commentaire::where('commentaires.task_id', $id)->get();       
+        $tache = Tache::find($id);
+        return view("tache.action", ['tache'=>$tache, 'commentaires'=>$comment]);
+    }
+
+    public function updateStatut (Request $request, $id)
     {
         $tache = Tache::find($id);
-        return view("tache.action", ['tache'=>$tache]);
+        $tache->statut_id = $request->input('statut');
+        $tache->save();
+
+        return view("home");
     }
 }
