@@ -11,35 +11,21 @@
 
         }
 
-        .left {
-            float: left;
-            width: 70%;
-        }
-
-        .right {
-            float: right;
-            width: 30%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
 
         .centered {
-            border: solid rgb(203, 200, 200) 2px;
-            border-ra background: whitesmoke;
-            padding: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100%;
-            box-shadow: 0 2px 5px rgba(0, 2, 2, 0.1);
+            height: 100vh;
+            width: 80%;
+            margin: 0 auto;
         }
 
         .formulaire {
-            width: 75%;
-            z-index: 999;
-            position: fixed
+            padding:20px;
+            width: 60%;
+            height: 100%;
+            position: absolute
         }
 
         select {
@@ -83,7 +69,7 @@
     </style>
     <div class="centered">
         <form action="{{ route('post-comment', $tache->id) }}" method="post" class="formulaire">
-            <div class="card left">
+            <div class="card">
                 <div class="card-header">
                     <h3>Tâches : {{ $tache->titre }}</h3>
                 </div>
@@ -113,7 +99,6 @@
                                         src="{{ asset('assets/img/illustrations/profiles/profile-1.png') }}">
                                 </div>
                                 <div class="comment-content">
-                                    {{-- <h3>{{$comment->name}} {{$comment->prenom}}</h3> --}}
                                     <p>{{ $comment->contenu }}</p>
                                 </div>
                             </div>
@@ -122,15 +107,8 @@
                     </div>
                 </div>
             </div>
-            <div class="right">
-                <select id="floatingSelect" aria-label="Floating label select example" name="statut">
-                    <option>Statut de la tâche</option>
-                    <option value="3">En attente</option>
-                    <option value="4">Terminé</option>
-                    <option value="2">En cours</option>
-                </select>
-            </div>
-        </form>
+    </div>
+    </form>
 
     </div>
 @endsection

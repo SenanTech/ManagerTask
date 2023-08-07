@@ -160,6 +160,44 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.select-list {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 5px 5px;
+  background-color: #2797e1;
+  border: none;
+  color: #f9f9f9;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: 1s;
+}
+
+/* Style the dropdown arrow */
+.select-list::-ms-expand {
+  display: none;
+}
+
+/* Add custom arrow icon */
+.select-list:before {
+  content: '\25BC'; /* Unicode arrow-down character */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 16px;
+}
+
+/* Style the dropdown options */
+.select-list option {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* Apply hover style on options */
+.select-list option:hover {
+  background-color: #f5f5f5;
+}
 hr {
   margin: 1rem 0;
   color: inherit;

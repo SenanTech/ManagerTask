@@ -124,8 +124,6 @@ public function destroy($id)
 }
 
         
-    
-
 
     public function userTacheListe()
     {
@@ -137,7 +135,7 @@ public function destroy($id)
 
         // Regrouper les tâches par projet en utilisant la clé 'projects_id'
         $tachesParProjet = $taches->groupBy('projects_id');
-
+        
         return view('tache.userList', ['tachesParProjet' => $tachesParProjet]);
 
     }
@@ -148,5 +146,14 @@ public function destroy($id)
         $comment = Commentaire::where('commentaires.task_id', $id)->get();       
         $tache = Tache::find($id);
         return view("tache.action", ['tache'=>$tache, 'commentaires'=>$comment]);
+    }
+
+    public function updateStatut (Request $request, $id)
+    {
+        $tache = Tache::find($id);
+        $tache->statut_id = $request->input('statut');
+        $tache->save();
+
+        return view("home");
     }
 }

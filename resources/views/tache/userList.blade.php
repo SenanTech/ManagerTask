@@ -30,7 +30,17 @@
                                     @foreach ($tachesProjet as $tache)
                                         <li class="list-group-item d-flex justify-content-between rounded mb-2  shadow-sm">
                                             {{ $tache->titre }}
-                                            <span class="badge bg-primary-soft text-black ">{{$tache->titre_statut}}</span>
+                                            <form id="form-{{ $tache->tache_id }}"
+                                                action="{{ route('updateStatut', $tache->tache_id) }}" method="POST">
+                                                @csrf
+                                                <select class="select-list" name="statut"
+                                                    onchange="submitForm({{ $tache->tache_id }})">
+                                                    <option>{{ $tache->titre_statut }}</option>
+                                                    <option value="1"> En attente </option>
+                                                    <option value="2"> En cours </option>
+                                                    <option value="4"> Terminée </option>
+                                                </select>
+                                            </form>
                                             <a style="background:rgb(128, 181, 225)"
                                                 href="{{ route('tacheAction', $tache->tache_id) }}"
                                                 class="btn btn-sm">Action</a><br>
@@ -41,6 +51,7 @@
                         </div>
                     </div>
                 @endforeach
+
 
             </div>
         </div>

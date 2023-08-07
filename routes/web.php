@@ -78,8 +78,8 @@ Route::middleware(['auth','verified'])->group(function () {
     
     Route::get('/tache-action/{id}', [TacheController::class, 'tacheAction'])->name('tacheAction');
     Route::post('/post-comment/{id}', [CommentaireController::class, 'postComment'])->name('post-comment');
+
+    Route::post('/updateStatut/{id}', [TacheController::class, 'updateStatut'])->name('updateStatut');
   
 
 });
-
-
