@@ -29,11 +29,12 @@ class TacheController extends Controller
         $task = Tache::join('users', 'taches.user_id','users.id')
         ->join( 'statuts', 'taches.statut_id','statuts.id')
         ->join('projects', 'taches.projet_id', 'projects.id')
-        ->select(['taches.*', 'users.name', 'users.prenom', 'statuts.titre as titre_statut', 'projects.name as name_projet'])
+        ->select(['taches.*', 'taches.id as tache_id', 'users.name', 'users.prenom', 'statuts.titre as titre_statut', 'projects.name as name_projet'])
         ->get();
 
+        $commentaires = Commentaire::all();
 
-        return view('tache.show', ['task'=>$task]);
+        return view('tache.show', ['task'=>$task, 'commentaires'=>$commentaires]);
     }
 
     public function create($id)
