@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-mb-3 text-center">
             <div class="alert alert-info" role="alert">
-                <p>Aucune tâche n'a été créée pour ce projet.</p>
+                <p>Aucune tâche n'a été créée.</p>
             </div>       
             
         </div>

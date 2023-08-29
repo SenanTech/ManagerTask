@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Login-ManagerTask</title>
+        <title>S'inscrire</title>
         <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
         <!-- <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}} "> -->
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
@@ -24,7 +24,7 @@
                             <div class="col-lg-7">
                                 <!-- Basic registration form-->
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header justify-content-center"><h3 class="fw-light my-4">Create Account</h3></div>
+                                    <div class="card-header justify-content-center"><h3 class="fw-light my-4">Créez un compte</h3></div>
                                     <div class="card-body">
                                         <!-- Registration form-->
                                         <form method="POST" action="{{ route('register') }}">
@@ -34,8 +34,8 @@
                                                 <div class="col-md-6">
                                                     <!-- Form Group (first name)-->
                                                     <div class="mb-3">
-                                                        <label class="small mb-1" for="name">First Name</label>
-                                                        <input class="form-control @error('name') is-invalid @enderror" id="name" type="text" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Enter first name" />
+                                                        <label class="small mb-1" for="name">Nom</label>
+                                                        <input class="form-control @error('name') is-invalid @enderror" id="name" type="text" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Entrez votre nom" />
                                                         @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -46,8 +46,8 @@
                                                 <div class="col-md-6">
                                                     <!-- Form Group (last name)-->
                                                     <div class="mb-3">
-                                                    <label class="small mb-1" for="name">Last Name</label>
-                                                        <input class="form-control @error('prenom') is-invalid @enderror" id="prenom" type="text" name="prenom" value="{{ old('prenom') }}" required autocomplete="prenom" autofocus placeholder="Enter Last name" />
+                                                    <label class="small mb-1" for="name">Prénom</label>
+                                                        <input class="form-control @error('prenom') is-invalid @enderror" id="prenom" type="text" name="prenom" value="{{ old('prenom') }}" required autocomplete="prenom" autofocus placeholder="Entrez votre prénom" />
                                                         @error('prenom')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -58,8 +58,8 @@
                                             </div>
                                             <!-- Form Group (email address)            -->
                                             <div class="mb-3">
-                                                <label class="small mb-1" for="email">Email</label>
-                                                <input  id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required  autocomplete="email"aria-describedby="emailHelp" placeholder="Enter email address" />
+                                                <label class="small mb-1" for="email">Adresse Email</label>
+                                                <input  id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required  autocomplete="email"aria-describedby="emailHelp" placeholder="Entrez votre emails" />
                                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -71,8 +71,8 @@
                                                 <div class="col-md-6">
                                                     <!-- Form Group (password)-->
                                                     <div class="mb-3">
-                                                        <label class="small mb-1" for="password">Password</label>
-                                                        <input  id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Enter password" />
+                                                        <label class="small mb-1" for="password">Mot de passe</label>
+                                                        <input  id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Entrez votre mot de passe" />
                                                         @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -83,18 +83,18 @@
                                                 <div class="col-md-6">
                                                     <!-- Form Group (confirm password)-->
                                                     <div class="mb-3">
-                                                        <label class="small mb-1" for="password-confirm">Confirm Password</label>
-                                                        <input class="form-control" name="password_confirmation" required autocomplete="new-password" id="password-confirm" type="password" placeholder="Confirm password" />
+                                                        <label class="small mb-1" for="password-confirm">Confirmation</label>
+                                                        <input class="form-control" name="password_confirmation" required autocomplete="new-password" id="password-confirm" type="password" placeholder="Confirmer votre mot de passe" />
                                                    </div>
                                                 </div>
                                             </div>
                                             <!-- Form Group (create account submit)-->
                                             <button type="submit" class="btn btn-primary">
-                                            Create Account</button>
+                                           Créez un compte</button>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <div class="small"><a href="{{ route('login') }}">Have an account? Go to login</a></div>
+                                        <div class="small"><a href="{{ route('login') }}">Vous avez un compte? Se connecter!</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +106,7 @@
                 <footer class="footer-admin mt-auto footer-dark">
                     <div class="container-xl px-4">
                         <div class="row">
-                            <div class="col-md-6 small">Copyright © Your Website 2021</div>
+                            <div class="col-md-6 small">Copyright © Your Website 2023</div>
                             <div class="col-md-6 text-md-end small">
                                 <a href="#!">Privacy Policy</a>
                                 ·

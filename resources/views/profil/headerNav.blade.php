@@ -8,7 +8,7 @@
                     <div class="col-auto mb-3">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="user"></i></div>
-                            Account Settings - Profile
+                           Paramètres du compte
                         </h1>
                     </div>
                 </div>
@@ -19,9 +19,9 @@
     <div class="container-xl px-4 mt-4">
         <!-- Account page navigation-->
         <nav class="nav nav-borders">
-            <a class="nav-link active ms-0" href={{ route('account') }}>Profile</a>
+            <a class="nav-link active ms-0" href="{{ route('account') }}">Mon Profil</a>
             @if (Auth::user()->role == 'admin')
-                <a class="nav-link" href={{ route('security') }}>Security</a>
+                <a class="nav-link " href="{{ route('security') }}">Sécurité</a>
             @endif
         </nav>
         <hr class="mt-0 mb-4" />

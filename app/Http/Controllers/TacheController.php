@@ -20,6 +20,7 @@ class TacheController extends Controller
         ->where('taches.projet_id',$id)
         ->select(['taches.*', 'users.name', 'users.prenom', 'statuts.titre as titre_statut'])
         ->get();
+        
 
         return view('tache.list', ['tache'=>$tache, 'projet_id'=>$id]);
 

@@ -78,7 +78,7 @@
                             <div class="mb-3">
                                 <label class="small mb-1" for="inputEmailAddress">Addresse Email</label>
                                 <input class="form-control" name="email" id="inputEmailAddress" type="email"
-                                    placeholder="Votre adresse email" value="name@example.com" />
+                                    placeholder="name@example.com" />
                             </div>
                             <!-- Form Group (Group Selection Checkboxes)-->
                             <div class="mb-3">
