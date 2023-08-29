@@ -63,7 +63,6 @@ class UserController extends Controller
             'name' => 'required|string',
             'prenom' => 'required|string',
             'email' => 'required|string',
-            'role' => 'required|string',
             'password' => 'required|string',
 
         ]);
@@ -71,7 +70,6 @@ class UserController extends Controller
         $user->name = $request->input('name');
         $user->prenom = $request->input('prenom');
         $user->email = $request->input('email');
-        $user->role = $request->input('role');
         $user->password = $request->input('password');
         $user->save();
 

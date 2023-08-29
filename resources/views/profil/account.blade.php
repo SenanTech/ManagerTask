@@ -9,7 +9,7 @@
         <div class="col-xl-4">
             <!-- Profile picture card-->
             <div class="card mb-4 mb-xl-0">
-                <div class="card-header">Profile Picture </div>
+                <div class="card-header">Photo de profil </div>
                 <form enctype="multipart/form-data" method="post" action="{{route('addimage')}}" class="card-body text-center">
                     <!-- Profile picture image-->
                     @csrf
@@ -21,53 +21,42 @@
                         alt="" />
                     @endif
                     <!-- Profile picture help block-->
-                    <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                    <div class="small font-italic text-muted mb-4">JPG ou PNG moins de 5 MB</div>
                     <input type="file" name="image" id="" >
                     <!-- Profile picture upload button-->
-                    <button class="btn btn-primary mt-3" type="submit">Changer l'image</button>
+                    <button class="btn btn-primary mt-3" type="submit">Modifier</button>
                 </form>
             </div>
         </div>
         <div class="col-xl-8">
             <!-- Account details card-->
             <div class="card mb-4">
-                <div class="card-header">Account Details</div>
+                <div class="card-header">Détails de votre compte</div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('accountUpdate') }}">
+                    <form method="POST" action="{{route('accountUpdate')}}">
                         @csrf
 
                         <!-- Form Row-->
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (first name)-->
                             <div class="col-md-6">
-                                <label class="small mb-1" for="inputFirstName">First name</label>
-                                <input class="form-control" name="name" id="inputFirstName" type="text"
-                                    placeholder="Enter your first name" value="{{Auth::user()->name}}" />
+                                <label class="small mb-1" for="inputFirstName">Nom</label>
+                                <input class="form-control" name="name" id="inputFirstName" type="text" value="{{Auth::user()->name}}" />
                             </div>
                             <!-- Form Group (last name)-->
                             <div class="col-md-6">
-                                <label class="small mb-1" for="inputLastName">Last name</label>
-                                <input class="form-control" name="prenom" id="inputLastName" type="text"
-                                    placeholder="Enter your last name" value="{{Auth::user()->name}}" />
+                                <label class="small mb-1" for="inputLastName">Prénom</label>
+                                <input class="form-control" name="prenom" id="inputLastName" type="text" value="{{Auth::user()->prenom}}" />
                             </div>
                         </div>
                         <!-- Form Row -->
-                        <div class="row gx-3 mb-3">
-
-                            <!-- Form Group (location)-->
-                            <div class="col-md-6">
-                                <label class="small mb-1" for="inputLocation">Location</label>
-                                <input class="form-control" id="inputLocation" type="text"
-                                    placeholder="Enter your location" value="San Francisco, CA" />
-                            </div>
-                        </div>
+                        
                        @if (Auth::user()->role == 'admin')
 
                          <!-- Form Group (email address)-->
                          <div class="mb-3">
-                            <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                            <input class="form-control" name="email" id="inputEmailAddress" type="email"
-                                placeholder="Enter your email address" value="name@example.com" />
+                            <label class="small mb-1" for="inputEmailAddress">Adresse Email</label>
+                            <input class="form-control" name="email" id="inputEmailAddress" type="email" value="{{Auth::user()->email}}" />
                         </div>
                            
                        @endif
@@ -75,13 +64,13 @@
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (phone number)-->
                             <div class="col-md-6">
-                                <label class="small mb-1" for="inputPhone">Phone number</label>
+                                <label class="small mb-1" for="inputPhone">Téléphone</label>
                                 <input class="form-control" id="inputPhone" type="tel"
                                     placeholder="Enter your phone number" value="00-00-00-00" />
                             </div>
                         </div>
                         <!-- Save changes button-->
-                        <button class="btn btn-primary" type="submit">Save changes</button>
+                        <button class="btn btn-primary" type="submit">Enregistrer</button>
                     </form>
                 </div>
             </div>

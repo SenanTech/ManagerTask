@@ -14,12 +14,7 @@
                                     Modifier
                                 </h1>
                             </div>
-                            <div class="col-12 col-xl-auto mb-3">
-                                <a class="btn btn-sm btn-light text-primary" href="{{ route('list') }}">
-                                    <i class="me-1" data-feather="arrow-left"></i>
-                                    voir la liste des utilisateurs
-                                </a>
-                            </div>
+                           
 
                         </div>
                     </div>
@@ -33,17 +28,20 @@
                         <div class="card mb-4 mb-xl-0">
                             <div class="card-header">Photo de profil</div>
                             <div class="card-body text-center">
-                                <!-- Profile picture image-->
-                                <img class="img-account-profile rounded-circle mb-2"
-                                    src="assets/img/illustrations/profiles/profile-1.png" alt="" />
-                                <!-- Profile picture help block-->
-                                <div class="small font-italic text-muted mb-4">JPG ou PNG ne dépassant pas 5 Mo</div>
-                                <!-- Profile picture upload button-->
-                                <button class="btn btn-primary" type="button">Importer une image</button>
-                            </div>
+                        <!-- Profile picture image-->
+                        <img class="img-account-profile rounded-circle mb-2"
+                            src="assets/img/illustrations/profiles/profile-1.png" alt="" />
+                        <!-- Profile picture help block-->
+                        <div class="small font-italic text-muted mb-4">JPG ou PNG ne dépassant pas 5 Mo</div>
+                        <!-- Profile picture upload button-->
+                        <button class="btn btn-primary" type="button">Importer une image</button>
+                    </div>
                         </div>
                     </div>
+
+
                     <div class="col-xl-8">
+
                         <!-- Account details card-->
                         <div class="card mb-4">
                             <div class="card-header">Détails du compte</div>
@@ -56,14 +54,14 @@
                                         <div class="col-md-6">
                                             <label class="small mb-1" for="inputFirstName">Nom</label>
                                             <input class="form-control" id="inputFirstName" type="text"
-                                                placeholder="Enter your first name" value="{{ $user->name }}"
+                                                value="{{ $user->name }}"
                                                 name="name" />
                                         </div>
                                         <!-- Form Group (last name)-->
                                         <div class="col-md-6">
-                                            <label class="small mb-1" for="inputLastName">Prenom</label>
+                                            <label class="small mb-1" for="inputLastName">Prénom</label>
                                             <input class="form-control" id="inputLastName" type="text"
-                                                placeholder="Enter your last name" value="{{ $user->prenom }}"
+                                                value="{{ $user->prenom }}"
                                                 name="prenom" />
                                         </div>
                                     </div>
@@ -71,7 +69,7 @@
                                     <div class="mb-3">
                                         <label class="small mb-1" for="inputEmailAddress">Addresse Email</label>
                                         <input class="form-control" id="inputEmailAddress" type="email"
-                                            placeholder="Enter your email address" value="{{ $user->email }}" name="email"
+                                        value="{{ $user->email }}" name="email"
                                             name="email" />
                                     </div>
 
@@ -79,15 +77,15 @@
                                     <div class="mb-3">
                                         <label class="small mb-1" for="inputpassword">Mot de passe</label>
                                         <input class="form-control" id="inputpassword" type="password"
-                                            placeholder="Enter your password" name="password" />
+                                             name="password" />
                                     </div>
 
                                     <!-- password confirm-->
-                                    <div class="mb-3">
+                                    <!-- <div class="mb-3">
                                         <label class="small mb-1" for="confirmpassword">Confirmer mot de passe</label>
-                                        <input class="form-control" id="confirmpassword" type="password" placeholder="Confirm your password"
+                                        <input class="form-control" id="confirmpassword" type="password" 
                                             autocomplete="new-password">
-                                    </div>
+                                    </div> -->
 
                                     
                                     <!-- Submit button-->

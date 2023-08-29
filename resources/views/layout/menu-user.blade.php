@@ -38,7 +38,7 @@
             </a>
             <div class="collapse" id="collapseUtilities" data-bs-parent="#accordionSidenav">
                 <nav class="sidenav-menu-nested nav">
-                    <a class="nav-link" href="{{route("user-tache-list")}}">Liste des tâches </a>
+                    <a class="nav-link" href="{{route('user-tache-list')}}">Liste des tâches </a>
                 </nav>
             </div>
 
