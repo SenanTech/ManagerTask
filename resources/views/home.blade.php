@@ -8,7 +8,7 @@
                 <h1 class="mb-0">Tableau de bord</h1>
                 <div class="small mb-3">
                     <span class="fw-500 text-primary">ManagerTask,</span>
-                   pour une meilleure gestion des tâches.
+                    pour une meilleure gestion des tâches.
                 </div>
             </div>
             <!-- Date range picker example-->
@@ -22,21 +22,30 @@
             <div class="card-body p-5">
                 <div class="row align-items-center justify-content-between">
                     <div class="col">
-                        <h2 class="text-primary">Transformez vos idées en actions!</h2>
-                        <p class="text-gray-700">
-                        Bienvenue dans notre système de gestion de tâches intelligent. Libérez votre potentiel en organisant vos journées de manière efficace et en transformant vos objectifs en réalité. Simplifiez la façon dont vous travaillez, collaborez et réalisez des projets.
+                        <h2 class="text-primary">Bienvenue sur notre Application de Gestion de Tâches !</h2>
+                        <p class="text-gray-700">Organisez votre vie de manière efficace et restez concentré sur vos
+                            objectifs. Notre application conviviale vous permet de créer, suivre et gérer vos tâches en
+                            toute simplicité. Ne laissez plus rien au hasard et optimisez votre productivité.
+
+                            Que vous soyez un professionnel occupé ou simplement à la recherche d'une meilleure
+                            organisation, notre application est là pour vous aider. Commencez dès aujourd'hui à planifier,
+                            exécuter et accomplir vos tâches de manière transparente.
+
+                            Nous sommes ravis de vous accompagner dans votre parcours vers une gestion des tâches plus
+                            efficace et une vie plus équilibrée. N'hésitez pas à explorer toutes les fonctionnalités que
+                            nous offrons et à créer un espace où vos idées se transforment en réalisations concrètes.
+
+                            Merci d'avoir choisi notre application. Préparez-vous à relever de nouveaux défis et à réaliser
+                            vos rêves, une tâche à la fois.
                         </p>
-                        <a class="btn btn-primary p-3" href="{{route('projects-create')}}">
+                        <a class="btn btn-primary p-3" href="{{ route('projects-create') }}">
                             Commencez
                             <i class="ms-1" data-feather="arrow-right"></i>
                         </a>
                     </div>
                     <div class="col d-none d-lg-block mt-xxl-n4"><img class="img-fluid px-xl-4 mt-xxl-n5"
-                            src="{{asset('assets/img/illustrations/statistics.svg')}}" /></div>
+                            src="{{ asset('assets/img/illustrations/statistics.svg') }}" /></div>
                 </div>
             </div>
         </div>
-        <div class="mb-3"> Rejoignez-nous dans cette aventure de productivité et d'accomplissement. Ensemble, nous allons créer un avenir plus organisé et plus gratifiant. Commencez dès aujourd'hui!</div>
-   
-    </div>
-@endsection
+    @endsection
