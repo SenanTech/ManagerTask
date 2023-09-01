@@ -182,11 +182,11 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{route('account')}}">
                             <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
-                            Account
+                            Mon compte
                         </a>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
-                            Logout
+                           Se déconnecter
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST">
                        @csrf
